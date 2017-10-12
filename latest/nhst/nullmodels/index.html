@@ -697,7 +697,7 @@
 <p><a id='EcologicalNetwork.make_binary' href='#EcologicalNetwork.make_binary'>#</a>
 <strong><code>EcologicalNetwork.make_binary</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns a matrix B of the same size as A, in which each element B(i,j) is 1 if A(i,j) is greater than 0.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./matrix_utils.jl#L116-L119' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/matrix_utils.jl#L116-L119' class='documenter-source'>source</a><br></p>
 <p><a id='Using-a-threshold-1'></a></p>
 <h3 id="using-a-threshold">Using a threshold</h3>
 <p>The second way is to determine a cutoff for probabilities, below which they will be assigned <code>false</code>. This is done through <code>make_threshold</code>:</p>
@@ -708,10 +708,10 @@
 
 
 <div class="codehilite"><pre><span></span>4×4 Array{Bool,2}:
- true   true   true   true
- true   true  false  false
- true   true   true   true
- true  false  false  false
+ false  false   true   true
+  true  false   true   true
+ false  false   true  false
+ false   true  false  false
 </pre></div>
 
 
@@ -719,7 +719,7 @@
 <strong><code>EcologicalNetwork.make_threshold</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns a matrix B of the same size as A, in which each element B(i,j) is 1 if A(i,j) is &gt; <code>k</code>. This is probably unwise to use this function since this practice is of questionnable relevance, but it is included for the sake of exhaustivity.</p>
 <p><code>k</code> must be in [0;1[.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./matrix_utils.jl#L94-L101' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/matrix_utils.jl#L94-L101' class='documenter-source'>source</a><br></p>
 <p><a id='Random-draws-1'></a></p>
 <h3 id="random-draws">Random draws</h3>
 <p>The last way to convert a probabilistic network to a deterministic one is to perform one random draw for each interaction. In this scenario, <code>true</code> is assigned with a probability $P_{ij}$. This is done with the <code>make_bernoulli</code> function:</p>
@@ -730,9 +730,9 @@
 
 
 <div class="codehilite"><pre><span></span>4×4 Array{Bool,2}:
-  true  false   true  false
-  true   true  false  false
- false   true  false  false
+ false  false  false  false
+ false  false  false   true
+ false   true   true   true
   true   true   true  false
 </pre></div>
 
@@ -740,7 +740,7 @@
 <p><a id='EcologicalNetwork.make_bernoulli' href='#EcologicalNetwork.make_bernoulli'>#</a>
 <strong><code>EcologicalNetwork.make_bernoulli</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns a matrix B of the same size as A, in which each element B(i,j) is 1 with probability A(i,j).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./matrix_utils.jl#L51-L54' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/matrix_utils.jl#L51-L54' class='documenter-source'>source</a><br></p>
 <p><a id='Creating-a-probabilistic-network-from-a-deterministic-network-1'></a></p>
 <h2 id="creating-a-probabilistic-network-from-a-deterministic-network">Creating a probabilistic network from a deterministic network</h2>
 <p>The inverse operation can be done using the <code>nullX</code> functions. These functions use informations about the degree distribution to generate probabilistic networks:</p>
@@ -752,7 +752,7 @@
 
 
 <p>Given a matrix <code>A</code>, <code>null1(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the connectance of <code>A</code>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./nullmodels.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/nullmodels.jl#L1-L9' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.null2' href='#EcologicalNetwork.null2'>#</a>
 <strong><code>EcologicalNetwork.null2</code></strong> &mdash; <em>Function</em>.</p>
 <p><strong>Type II null model</strong></p>
@@ -761,7 +761,7 @@
 
 
 <p>Given a matrix <code>A</code>, <code>null2(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the degree of each species.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./nullmodels.jl#L47-L55' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/nullmodels.jl#L47-L55' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.null3in' href='#EcologicalNetwork.null3in'>#</a>
 <strong><code>EcologicalNetwork.null3in</code></strong> &mdash; <em>Function</em>.</p>
 <p><strong>Type IIIin null model</strong></p>
@@ -770,7 +770,7 @@
 
 
 <p>Given a matrix <code>A</code>, <code>null3in(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the in-degree (number of predecessors) of each species, divided by the total number of possible predecessors.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./nullmodels.jl#L31-L40' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/nullmodels.jl#L31-L40' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.null3out' href='#EcologicalNetwork.null3out'>#</a>
 <strong><code>EcologicalNetwork.null3out</code></strong> &mdash; <em>Function</em>.</p>
 <p><strong>Type IIIout null model</strong></p>
@@ -779,7 +779,7 @@
 
 
 <p>Given a matrix <code>A</code>, <code>null3out(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the out-degree (number of successors) of each species, divided by the total number of possible successors.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./nullmodels.jl#L15-L24' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/nullmodels.jl#L15-L24' class='documenter-source'>source</a><br></p>
 <p>For an example:</p>
 <div class="codehilite"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">make_bernoulli</span><span class="p">(</span><span class="n">BipartiteProbaNetwork</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
 <span class="n">null2</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">A</span>
@@ -787,9 +787,9 @@
 
 
 <div class="codehilite"><pre><span></span>3×5 Array{Float64,2}:
- 0.466667  0.3  0.633333  0.3  0.8
- 0.266667  0.1  0.433333  0.1  0.6
- 0.366667  0.2  0.533333  0.2  0.7
+ 0.533333  0.533333  0.366667  0.2  0.533333
+ 0.733333  0.733333  0.566667  0.4  0.733333
+ 0.433333  0.433333  0.266667  0.1  0.433333
 </pre></div>
 
 
@@ -807,7 +807,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>0.06647469593898164
+<div class="codehilite"><pre><span></span>0.06594887007833437
 </pre></div>
 
 
@@ -839,7 +839,7 @@
 <li><code>n</code> (def. 1000), number of replicates to generate</li>
 <li><code>max</code> (def. 10000), number of trials to make</li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./nullmodels.jl#L63-L78' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/nullmodels.jl#L63-L78' class='documenter-source'>source</a><br></p>
                 
                   
                 
