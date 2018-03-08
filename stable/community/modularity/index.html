@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -14,9 +17,26 @@
         <meta name="author" content="Timothée Poisot">
       
       
-        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
     
     
       
@@ -24,19 +44,15 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application-769c285a91.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/application-02c2a4388f.palette.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
       
     
     
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        
-        
-        
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
@@ -48,16 +64,30 @@
     
   </head>
   
-  
-  
-  
-    <body data-md-color-primary="green" data-md-color-accent="deep-orange">
+    <body dir="ltr">
   
     <svg class="md-svg">
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
       </defs>
     </svg>
@@ -65,49 +95,57 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
+      <a href="#modularity" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href="../.." title="EcologicalNetwork.jl" class="md-logo md-header-nav__button">
-            <img src="../../images/logo.png" width="24" height="24">
-          </a>
-        
+        <a href="../.." title="EcologicalNetwork.jl" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             
-              
-                <span class="md-header-nav__parent">
-                  Network structure
-                </span>
-              
+              <span class="md-header-nav__topic">
+                EcologicalNetwork.jl
+              </span>
+              <span class="md-header-nav__topic">
+                Modularity
+              </span>
             
-            Modularity
           
-        </span>
+        </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
-<div class="md-search" data-md-component="search">
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
             Type to start searching
           </div>
           <ol class="md-search-result__list"></ol>
@@ -116,6 +154,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -127,7 +166,7 @@
   
 
 
-  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -149,6 +188,8 @@
     
     <div class="md-container">
       
+        
+      
       
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -159,11 +200,11 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-logo md-nav__button">
-        <img src="../../images/logo.png">
-      </i>
-    
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
     EcologicalNetwork.jl
   </label>
   
@@ -174,7 +215,7 @@
   
 
 
-  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -444,6 +485,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -640,6 +683,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -652,7 +697,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/community/modularity.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/community/modularity.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <p><a id='Modularity-1'></a></p>
@@ -670,7 +715,7 @@
 <li><code>L</code>, the array of (integers) module labels</li>
 <li><code>Q</code>, if needed, the modularity value</li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L1-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L1-L10' class='documenter-source'>source</a><br></p>
 <p><a id='Measures-of-modularity-1'></a></p>
 <h2 id="measures-of-modularity">Measures of modularity</h2>
 <p><a id='EcologicalNetwork.Q' href='#EcologicalNetwork.Q'>#</a>
@@ -681,14 +726,14 @@
 
 
 <p>This measures modularity based on a matrix and a list of module labels. Note that this function assumes that interactions are directional, so that $A_{ij}$ represents an interaction from $i$ to $j$, but not the other way around.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L60-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L60-L69' class='documenter-source'>source</a><br></p>
 <p><strong>Modularity (from a <code>Partition</code>)</strong></p>
 <div class="codehilite"><pre><span></span>Q(P::Partition)
 </pre></div>
 
 
 <p>This measures Barber's bipartite modularity based on a <code>Partition</code> object, and update the object in the proccess.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L98-L105' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L98-L105' class='documenter-source'>source</a><br></p>
 <p>In addition, there is a measure of <em>realized</em> modularity:</p>
 <p><a id='EcologicalNetwork.Qr' href='#EcologicalNetwork.Qr'>#</a>
 <strong><code>EcologicalNetwork.Qr</code></strong> &mdash; <em>Function</em>.</p>
@@ -700,14 +745,14 @@
 <p>Measures realized modularity, based on a  a matrix and a list of module labels. Realized modularity usually takes values in the [0;1] interval, and is the proportion of interactions established <em>within</em> modules.</p>
 <p>The realized modularity is defined as $Q_R' = 2 imes (W/E) - 1$, where $W$ is the number of links <em>within</em> modules, and $E$ is the total number of links.</p>
 <p>Note that in some situations, <code>Qr</code> can be <em>lower</em> than 0. This reflects a partition in which more links are established between than within modules.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L111-L125' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L111-L125' class='documenter-source'>source</a><br></p>
 <p><strong>Realized modularity (from a <code>Partition</code>)</strong></p>
 <div class="codehilite"><pre><span></span>Qr(P::Partition)
 </pre></div>
 
 
 <p>Measures realized modularity, based on a <code>Partition</code> object.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L138-L144' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L138-L144' class='documenter-source'>source</a><br></p>
 <p><a id='Functions-for-modularity-detection-1'></a></p>
 <h2 id="functions-for-modularity-detection">Functions for modularity detection</h2>
 <p>The first function included is <code>label_propagation</code>, which is working well for large graphs. It can also be useful to generate an initial modular partition.</p>
@@ -718,7 +763,8 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./labelpropagation.jl#L77-L81' class='documenter-source'>source</a><br></p>
+<p>This function will optimize modularity by propagating labels along interactions. A node receives the label that is most frequent in its neighborhood. For quantitative networks, the interaction weight is taken into account. For probabilistic network, probabilities are used to draw the label.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/labelpropagation.jl#L77-L86' class='documenter-source'>source</a><br></p>
 <p>For larger graphs (as long as they are not probabilistic), there is the <code>louvain</code> function. It is <em>not</em> the most aggressively optimized implementation.</p>
 <p><a id='EcologicalNetwork.louvain' href='#EcologicalNetwork.louvain'>#</a>
 <strong><code>EcologicalNetwork.louvain</code></strong> &mdash; <em>Function</em>.</p>
@@ -728,7 +774,7 @@
 
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./louvain.jl#L73-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/louvain.jl#L73-L79' class='documenter-source'>source</a><br></p>
 <p>Finally, there is a <code>brim</code> function for bipartite networks.</p>
 <p><a id='EcologicalNetwork.brim' href='#EcologicalNetwork.brim'>#</a>
 <strong><code>EcologicalNetwork.brim</code></strong> &mdash; <em>Function</em>.</p>
@@ -738,14 +784,14 @@
 
 
 <p>Returns the best partition using BRIM, based on a Partition object.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./brim.jl#L20-L28' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/brim.jl#L20-L28' class='documenter-source'>source</a><br></p>
 <p><strong>Bipartite Recursively Induced Modularity</strong></p>
 <div class="codehilite"><pre><span></span>brim(N::BipartiteNetwork, L::Array{Int64, 1})
 </pre></div>
 
 
 <p>Returns the best partition using BRIM, based on a network and an initial set of modules.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./brim.jl#L33-L42' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/brim.jl#L33-L42' class='documenter-source'>source</a><br></p>
 <p><a id='Analyze-modularity-1'></a></p>
 <h2 id="analyze-modularity">Analyze modularity</h2>
 <p><a id='EcologicalNetwork.modularity' href='#EcologicalNetwork.modularity'>#</a>
@@ -767,7 +813,7 @@
 <ul>
 <li><code>replicates::Int64</code>, defaults to <code>100</code></li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L187-L209' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L187-L209' class='documenter-source'>source</a><br></p>
 <p><a id='Select-the-best-partition-1'></a></p>
 <h2 id="select-the-best-partition">Select the best partition</h2>
 <p><a id='EcologicalNetwork.best_partition' href='#EcologicalNetwork.best_partition'>#</a>
@@ -786,7 +832,7 @@
 <ul>
 <li><code>f::Function</code>, either <code>Q</code> or <code>Qr</code> (any function for which the highest value  represents a more modular structure).</li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L225-L242' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L225-L242' class='documenter-source'>source</a><br></p>
 <p><a id='Network-roles-1'></a></p>
 <h2 id="network-roles">Network roles</h2>
 <p><a id='EcologicalNetwork.networkroles' href='#EcologicalNetwork.networkroles'>#</a>
@@ -796,7 +842,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/tree/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/./modularity.jl#L277-L283' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L277-L283' class='documenter-source'>source</a><br></p>
                 
                   
                 
@@ -852,9 +898,9 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        <a href="http://www.mkdocs.org">MkDocs</a>
         and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -866,10 +912,9 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application-c35428f87f.js"></script>
+      <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
-      
-      <script>app.initialize({url:{base:"../.."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
