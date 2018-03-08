@@ -715,7 +715,7 @@
 <li><code>L</code>, the array of (integers) module labels</li>
 <li><code>Q</code>, if needed, the modularity value</li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L1-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L1-L10' class='documenter-source'>source</a><br></p>
 <p><a id='Measures-of-modularity-1'></a></p>
 <h2 id="measures-of-modularity">Measures of modularity</h2>
 <p><a id='EcologicalNetwork.Q' href='#EcologicalNetwork.Q'>#</a>
@@ -726,14 +726,14 @@
 
 
 <p>This measures modularity based on a matrix and a list of module labels. Note that this function assumes that interactions are directional, so that $A_{ij}$ represents an interaction from $i$ to $j$, but not the other way around.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L60-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L60-L69' class='documenter-source'>source</a><br></p>
 <p><strong>Modularity (from a <code>Partition</code>)</strong></p>
 <div class="codehilite"><pre><span></span>Q(P::Partition)
 </pre></div>
 
 
 <p>This measures Barber's bipartite modularity based on a <code>Partition</code> object, and update the object in the proccess.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L98-L105' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L98-L105' class='documenter-source'>source</a><br></p>
 <p>In addition, there is a measure of <em>realized</em> modularity:</p>
 <p><a id='EcologicalNetwork.Qr' href='#EcologicalNetwork.Qr'>#</a>
 <strong><code>EcologicalNetwork.Qr</code></strong> &mdash; <em>Function</em>.</p>
@@ -745,14 +745,14 @@
 <p>Measures realized modularity, based on a  a matrix and a list of module labels. Realized modularity usually takes values in the [0;1] interval, and is the proportion of interactions established <em>within</em> modules.</p>
 <p>The realized modularity is defined as $Q_R' = 2 imes (W/E) - 1$, where $W$ is the number of links <em>within</em> modules, and $E$ is the total number of links.</p>
 <p>Note that in some situations, <code>Qr</code> can be <em>lower</em> than 0. This reflects a partition in which more links are established between than within modules.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L111-L125' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L111-L125' class='documenter-source'>source</a><br></p>
 <p><strong>Realized modularity (from a <code>Partition</code>)</strong></p>
 <div class="codehilite"><pre><span></span>Qr(P::Partition)
 </pre></div>
 
 
 <p>Measures realized modularity, based on a <code>Partition</code> object.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L138-L144' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L138-L144' class='documenter-source'>source</a><br></p>
 <p><a id='Functions-for-modularity-detection-1'></a></p>
 <h2 id="functions-for-modularity-detection">Functions for modularity detection</h2>
 <p>The first function included is <code>label_propagation</code>, which is working well for large graphs. It can also be useful to generate an initial modular partition.</p>
@@ -763,7 +763,8 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/labelpropagation.jl#L77-L81' class='documenter-source'>source</a><br></p>
+<p>This function will optimize modularity by propagating labels along interactions. A node receives the label that is most frequent in its neighborhood. For quantitative networks, the interaction weight is taken into account. For probabilistic network, probabilities are used to draw the label.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/labelpropagation.jl#L77-L86' class='documenter-source'>source</a><br></p>
 <p>For larger graphs (as long as they are not probabilistic), there is the <code>louvain</code> function. It is <em>not</em> the most aggressively optimized implementation.</p>
 <p><a id='EcologicalNetwork.louvain' href='#EcologicalNetwork.louvain'>#</a>
 <strong><code>EcologicalNetwork.louvain</code></strong> &mdash; <em>Function</em>.</p>
@@ -773,7 +774,7 @@
 
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/louvain.jl#L73-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/louvain.jl#L73-L79' class='documenter-source'>source</a><br></p>
 <p>Finally, there is a <code>brim</code> function for bipartite networks.</p>
 <p><a id='EcologicalNetwork.brim' href='#EcologicalNetwork.brim'>#</a>
 <strong><code>EcologicalNetwork.brim</code></strong> &mdash; <em>Function</em>.</p>
@@ -783,14 +784,14 @@
 
 
 <p>Returns the best partition using BRIM, based on a Partition object.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/brim.jl#L20-L28' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/brim.jl#L20-L28' class='documenter-source'>source</a><br></p>
 <p><strong>Bipartite Recursively Induced Modularity</strong></p>
 <div class="codehilite"><pre><span></span>brim(N::BipartiteNetwork, L::Array{Int64, 1})
 </pre></div>
 
 
 <p>Returns the best partition using BRIM, based on a network and an initial set of modules.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/brim.jl#L33-L42' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/brim.jl#L33-L42' class='documenter-source'>source</a><br></p>
 <p><a id='Analyze-modularity-1'></a></p>
 <h2 id="analyze-modularity">Analyze modularity</h2>
 <p><a id='EcologicalNetwork.modularity' href='#EcologicalNetwork.modularity'>#</a>
@@ -812,7 +813,7 @@
 <ul>
 <li><code>replicates::Int64</code>, defaults to <code>100</code></li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L187-L209' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L187-L209' class='documenter-source'>source</a><br></p>
 <p><a id='Select-the-best-partition-1'></a></p>
 <h2 id="select-the-best-partition">Select the best partition</h2>
 <p><a id='EcologicalNetwork.best_partition' href='#EcologicalNetwork.best_partition'>#</a>
@@ -831,7 +832,7 @@
 <ul>
 <li><code>f::Function</code>, either <code>Q</code> or <code>Qr</code> (any function for which the highest value  represents a more modular structure).</li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L225-L242' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L225-L242' class='documenter-source'>source</a><br></p>
 <p><a id='Network-roles-1'></a></p>
 <h2 id="network-roles">Network roles</h2>
 <p><a id='EcologicalNetwork.networkroles' href='#EcologicalNetwork.networkroles'>#</a>
@@ -841,7 +842,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/537522ae9bdb5c47495ec054a9f52e528e7314a6/src/modularity.jl#L277-L283' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/modularity/modularity.jl#L277-L283' class='documenter-source'>source</a><br></p>
                 
                   
                 
