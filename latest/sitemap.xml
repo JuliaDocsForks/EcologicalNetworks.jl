@@ -2,92 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/types/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/data/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/usecase/nestedness/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/usecase/modularity/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/usecase/motifs/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/usecase/plot/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/community/nlinks/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/community/degree/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/community/motifs/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/community/nestedness/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/community/modularity/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/species/specificity/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/species/centrality/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/species/foodweb/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/nhst/nullmodels/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/nhst/swaps/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/nhst/nhst/</loc>
-     <lastmod>2018-07-12</lastmod>
+     <lastmod>2018-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
