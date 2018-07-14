@@ -576,7 +576,7 @@
 N |&gt; lp |&gt; x -&gt; brim(x...) |&gt; x -&gt; Q(x...)
 </code></pre>
 
-<pre><code>0.27143241064230045
+<pre><code>0.208546089760817
 </code></pre>
 
 <p><a id='Measures-1'></a></p>
@@ -593,21 +593,21 @@ Qr
 </code></pre>
 
 <p>This returns <em>a function</em> which, when applied to a network, will randomly assign every species to one of <code>n</code> modules. The correct way to apply this function to a network <code>N</code> is, therefore <code>n_random_modules(4)(N)</code> (with four modules).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/starters.jl#L1-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/modularity/starters.jl#L1-L7' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.each_species_its_module' href='#EcologicalNetwork.each_species_its_module'>#</a>
 <strong><code>EcologicalNetwork.each_species_its_module</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>each_species_its_module(N::T) where {T&lt;:AbstractEcologicalNetwork}
 </code></pre>
 
 <p>Returns a dictionary in which each species is its own module. This is used as a starting point for <code>lp</code> and <code>salp</code> internally. This is often a very poor starting point for <code>brim</code>, and should probably not be used on its own.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/starters.jl#L14-L20' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/modularity/starters.jl#L14-L20' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.lp' href='#EcologicalNetwork.lp'>#</a>
 <strong><code>EcologicalNetwork.lp</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>lp(N::T) where {T&lt;:AbstractEcologicalNetwork}
 </code></pre>
 
 <p>Uses label propagation to generate a first approximation of the modular structure of a network. This is usually followed by the BRIM (<code>brim</code>) method. This method supposedly performs better for large graphs, but we rarely observed any differences between it and variations of BRIM alone on smaller graphs.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/labelpropagation.jl#L1-L8' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/modularity/labelpropagation.jl#L1-L8' class='documenter-source'>source</a><br></p>
 <p><a id='Optimizers-1'></a></p>
 <h2 id="optimizers">Optimizers</h2>
 <p><a id='EcologicalNetwork.brim' href='#EcologicalNetwork.brim'>#</a>
@@ -616,7 +616,7 @@ Qr
 </code></pre>
 
 <p>Uses BRIM to optimize the modularity of an ecological network. The <code>L</code> argument is a dictionary mapping every species in the network to its module. This function returns a tuple of the network and its module assignment.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/brim.jl#L1-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/modularity/brim.jl#L1-L7' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.salp' href='#EcologicalNetwork.salp'>#</a>
 <strong><code>EcologicalNetwork.salp</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>salp(N::T; θ::Float64=1.0, steps::Int64=10_000, λ::Float64=0.999, progress::Bool=false) where {T &lt;: BipartiteNetwork}
@@ -632,7 +632,7 @@ Qr
 </ul>
 <p>The θ parameter can be picked using the following method: if we want to allow a maximal loss of modularity of δ, after timestep k, with a decay parameter λ, with a probability P, then θ = -δ/[λᵏ×ln(P)]⁻¹. By beibg more or less restrictive on these parameters, the user can pick a value of θ for every problem.</p>
 <p>This function can work as a first step (like <code>lp</code>), but in explorations during the development of the package, we found that <code>brim</code> was rarely (if ever) able to optmize the output further. It can therefore be used on its own.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/labelpropagation.jl#L59-L86' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/modularity/labelpropagation.jl#L59-L86' class='documenter-source'>source</a><br></p>
                 
                   
                 

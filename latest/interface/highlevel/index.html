@@ -694,22 +694,22 @@
 </code></pre>
 
 <p>Returns an array of all species in a unipartite network. The order of the species corresponds to the order of rows/columns in the adjacency matrix.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L15-L20' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L15-L20' class='documenter-source'>source</a><br></p>
 <pre><code>species(N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Returns an array of all species in a bipartite network. The order of the species corresponds to the order of rows (top level) and columns (bottom level) of the adjacency matrix, in this order.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L26-L32' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L26-L32' class='documenter-source'>source</a><br></p>
 <pre><code>species(N::AbstractBipartiteNetwork, i::Int64)
 </code></pre>
 
 <p>Returns an array of species in either side of a bipartite network. The <code>i</code> parameter is the "margin" of the network, where <code>1</code> is species from the top, and <code>2</code> is species from the bottom layer.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L38-L44' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L38-L44' class='documenter-source'>source</a><br></p>
 <pre><code>species(N::AbstractUnipartiteNetwork, i::Int64)
 </code></pre>
 
 <p>Returns an array of species on either side of a unipartite network. In a unipartite network, species are the same on either size, so this essentially calls <code>species(N)</code>. This function is nevertheless useful when you want to write code that takes either side of the network in a general way.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L52-L59' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L52-L59' class='documenter-source'>source</a><br></p>
 <p><a id='Accessing-interactions-1'></a></p>
 <h2 id="accessing-interactions">Accessing interactions</h2>
 <p><a id='Presence-of-an-interaction-1'></a></p>
@@ -720,20 +720,20 @@
 </code></pre>
 
 <p>This function returns <code>true</code> if the interaction between <code>i</code> and <code>j</code> is not 0. This refers to species by their position instead of their name, and is not recommended as the main solution. This is used internally by a few functions, but is exported because it may be of general use.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L72-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L72-L79' class='documenter-source'>source</a><br></p>
 <pre><code>has_interaction{NT&lt;:AllowedSpeciesTypes}(N::AbstractEcologicalNetwork, i::NT, j::NT)
 </code></pre>
 
 <p>This function returns <code>true</code> if the interaction between <code>i</code> and <code>j</code> is not 0. This refers to species by their names/values, and is the recommended way to test for the presence of an interaction.</p>
 <p>Use <code>N[i,j]</code> if you need to get the value of the interaction.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L89-L97' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L89-L97' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.interactions' href='#EcologicalNetwork.interactions'>#</a>
 <strong><code>EcologicalNetwork.interactions</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>interactions(N::AbstractEcologicalNetwork)
 </code></pre>
 
 <p>Returns the interactions in the ecological network. Interactions are returned as an array of named tuples. <em>A minima</em>, these have fields <code>from</code> and <code>to</code>. For networks that are probabilistic, there is a <code>probability</code> field. For networks that are quantitative, there is a <code>strength</code> field. This functions allows to iterate over interactions in a network in a convenient way.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L409-L417' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L409-L417' class='documenter-source'>source</a><br></p>
 <p><a id='Network-slices-1'></a></p>
 <h3 id="network-slices">Network slices</h3>
 <p><a id='Base.getindex' href='#Base.getindex'>#</a>
@@ -742,43 +742,43 @@
 </code></pre>
 
 <p>Uses positions to get an index from a network position. It is recommended <em>not</em> to use this function, and instead use the variants of <code>getindex</code> working with species names directly.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L172-L178' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L172-L178' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractEcologicalNetwork, s1::T, s2::T)
 </code></pre>
 
 <p>Get the value of an interaction based on the <em>name</em> of the species. This is the recommended way to look for things in a network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L184-L189' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L184-L189' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, ::Colon, sp::T)
 </code></pre>
 
 <p>Gets the predecessors (<em>i.e.</em> species that interacts with / consume) of a focal species. This returns the list of species as a <code>Set</code> object, in which ordering is unimportant.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L199-L205' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L199-L205' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractEcologicalNetwork, sp::T, ::Colon)
 </code></pre>
 
 <p>Gets the successors (<em>i.e.</em> species that are interacted with / consumed) of a focal species. This returns the list of species as a <code>Set</code> object, in which ordering is unimportant.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L212-L218' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L212-L218' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractUnipartiteNetwork, sp::Array{T})
 </code></pre>
 
 <p>Induce a unipartite network based on a list of species, all of which must be in the original network. This function takes a single argument (as opposed to two arrays, or an array and a colon) to ensure that the returned network is unipartite.</p>
 <p>The network which is returned by this function may not have the species in the order specified by the user for performance reasons.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L225-L235' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L225-L235' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, ::Colon, sp::Array{T})
 </code></pre>
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L245-L249' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L245-L249' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, sp::Array{T}, ::Colon)
 </code></pre>
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L260-L264' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L260-L264' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, sp1::Array{T}, sp2::Array{T})
 </code></pre>
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L275-L279' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L275-L279' class='documenter-source'>source</a><br></p>
 <p><a id='Random-network-samples-1'></a></p>
 <h3 id="random-network-samples">Random network samples</h3>
 <p><a id='StatsBase.sample' href='#StatsBase.sample'>#</a>
@@ -787,33 +787,33 @@
 </code></pre>
 
 <p>Samples a sub-network from a unipartite network. <code>n</code> is the number of species to have in the sampled network. This functions makes <em>no</em> attempt to ensure that the network is not degenerate, or even has a single interaction. This is the recommended way to sample a unipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/sample.jl#L3-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L3-L10' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64}) where {T&lt;:AbstractUnipartiteNetwork}
 </code></pre>
 
 <p>Same as <code>sample</code>, but work when called with <code>(n,)</code> instead of a species number. This is an accepted way to sample a unipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/sample.jl#L17-L22' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L17-L22' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64,Int64}) where {T&lt;:AbstractUnipartiteNetwork}
 </code></pre>
 
 <p>Same as <code>sample</code> but called with <code>(n,n)</code> instead of a species number. Note that this will fail if the size requested is not square. This is not a really good way to sample a unipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/sample.jl#L27-L33' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L27-L33' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64}) where {T&lt;:AbstractBipartiteNetwork}
 </code></pre>
 
 <p>Same as <code>sample</code> but with a single species number given as <code>(n,)</code>, to return a bipartite network of equal richness on both sides. This is not a very good way to sample a bipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/sample.jl#L39-L45' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L39-L45' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Int64) where {T&lt;:AbstractBipartiteNetwork}
 </code></pre>
 
 <p>Same thing as <code>sample</code> but with a single species number, to return a bipartite network of equal richness on both sides. This is not a very good way to sample a bipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/sample.jl#L52-L58' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L52-L58' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64,Int64}) where {T&lt;:AbstractBipartiteNetwork}
 </code></pre>
 
 <p>Samples a sub-network from a bipartite network. <code>n</code> is the size of the network to return, <em>i.e.</em> number of top and bottom species. This functions makes <em>no</em> attempt to ensure that the network is not degenerate, or even has a single interaction.</p>
 <p>This is the recommended way to sample a bipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/sample.jl#L65-L74' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L65-L74' class='documenter-source'>source</a><br></p>
 <p><a id='Network-utilities-1'></a></p>
 <h2 id="network-utilities">Network utilities</h2>
 <p><a id='Network-size-1'></a></p>
@@ -824,7 +824,7 @@
 </code></pre>
 
 <p>Return the size of the adjacency matrix of an <code>AbstractEcologicalNetwork</code> object.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L151-L155' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L151-L155' class='documenter-source'>source</a><br></p>
 <p><a id='Species-richness-1'></a></p>
 <h3 id="species-richness">Species richness</h3>
 <p><a id='EcologicalNetwork.richness' href='#EcologicalNetwork.richness'>#</a>
@@ -833,12 +833,12 @@
 </code></pre>
 
 <p>Returns the number of species in a network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L320-L324' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L320-L324' class='documenter-source'>source</a><br></p>
 <pre><code>richness(N::AbstractEcologicalNetwork, i::Int64)
 </code></pre>
 
 <p>Returns the number of species on either side of the network. The value of <code>i</code> can be <code>1</code> (top-level species) or <code>2</code> (bottom-level species), as in the <code>species</code> function.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L330-L336' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L330-L336' class='documenter-source'>source</a><br></p>
 <p><a id='Changing-network-shape-1'></a></p>
 <h3 id="changing-network-shape">Changing network shape</h3>
 <p><a id='Base.transpose' href='#Base.transpose'>#</a>
@@ -847,31 +847,31 @@
 </code></pre>
 
 <p>Returns a transposed copy of the network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L397-L401' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L397-L401' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.nodiagonal' href='#EcologicalNetwork.nodiagonal'>#</a>
 <strong><code>EcologicalNetwork.nodiagonal</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>nodiagonal(N::AbstractUnipartiteNetwork)
 </code></pre>
 
 <p>Returns a copy of the network with its diagonal set to zero.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L118-L122' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L118-L122' class='documenter-source'>source</a><br></p>
 <pre><code>nodiagonal(N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Returns a <em>copy</em> of the network (because the diagonal of a bipartite network is never a meaningful notion). This function is clearly useless, but allows to write general code for all networks types when a step requires removing the diagonal.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L130-L137' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L130-L137' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.nodiagonal!' href='#EcologicalNetwork.nodiagonal!'>#</a>
 <strong><code>EcologicalNetwork.nodiagonal!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>nodiagonal!(N::AbstractUnipartiteNetwork)
 </code></pre>
 
 <p>Modifies the network so that its diagonal is set to the appropriate zero.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L107-L111' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L107-L111' class='documenter-source'>source</a><br></p>
 <pre><code>nodiagonal!(N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Does nothing.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L142-L146' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L142-L146' class='documenter-source'>source</a><br></p>
 <p><a id='Invert-interactions-1'></a></p>
 <h3 id="invert-interactions">Invert interactions</h3>
 <p><a id='Base.:!' href='#Base.:!'>#</a>
@@ -880,7 +880,7 @@
 </code></pre>
 
 <p>Returns the inverse of a binary network – interactions that were <code>false</code> become <code>true</code>, and conversely.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L386-L391' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L386-L391' class='documenter-source'>source</a><br></p>
 <p><a id='Modify-interactions-1'></a></p>
 <h3 id="modify-interactions">Modify interactions</h3>
 <p><a id='Base.setindex!' href='#Base.setindex!'>#</a>
@@ -889,12 +889,12 @@
 </code></pre>
 
 <p>Changes the value of the interaction at the specificied position, where <code>i</code> and <code>j</code> are species <em>names</em>. Note that this operation <strong>changes the network</strong>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L291-L296' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L291-L296' class='documenter-source'>source</a><br></p>
 <pre><code>setindex!(N::T, A::K, i::E, j::E) where {T &lt;: AbstractEcologicalNetwork, K &lt;: first(eltype(N)), E &lt;: Int}
 </code></pre>
 
 <p>Changes the value of the interaction at the specificied position, where <code>i</code> and <code>j</code> are species <em>positions</em>. Note that this operation <strong>changes the network</strong>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/utilities.jl#L306-L311' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L306-L311' class='documenter-source'>source</a><br></p>
                 
                   
                 

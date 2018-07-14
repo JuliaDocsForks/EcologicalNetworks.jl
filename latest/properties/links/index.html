@@ -571,24 +571,24 @@
 </code></pre>
 
 <p>This function will return the sum of all interactions in the network. For quantitative networks, this is the sum of interaction strengths. For binary networks, this is the number of interactions. For probabilistic networks, this is the expected number of realized interactions.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/connectance.jl#L3-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/connectance.jl#L3-L10' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.links' href='#EcologicalNetwork.links'>#</a>
 <strong><code>EcologicalNetwork.links</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>links(N::BinaryNetwork)
 </code></pre>
 
 <p>Number of non-zero interactions in a deterministic network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/connectance.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/connectance.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <pre><code>links(N::QuantitativeNetwork)
 </code></pre>
 
 <p>Number of non-zero interactions in a quantitative network (use <code>sum</code> to get the sum of interaction strengths).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/connectance.jl#L24-L29' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/connectance.jl#L24-L29' class='documenter-source'>source</a><br></p>
 <pre><code>links(N::ProbabilisticNetwork)
 </code></pre>
 
 <p>Expected number of interactions in a probabilistic network. To get the number of interactions that have a non-zero probability, use <em>e.g.</em> <code>links(N&gt;0.0)</code>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/connectance.jl#L34-L39' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/connectance.jl#L34-L39' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.connectance' href='#EcologicalNetwork.connectance'>#</a>
 <strong><code>EcologicalNetwork.connectance</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>connectance(N::AbstractEcologicalNetwork)
@@ -596,14 +596,14 @@
 
 <p>Number of links divided by the number of possible interactions. In unipartite networks, this is $L/S^2$. In bipartite networks, this is $L/(T × B)$. It is worth noting that while the maximal connectance is always 1 (i.e. the graph is complete), the minimum value (assuming that the network is not degenerate) is <em>not</em> 0. Instead, the minimum number of interactions in a unipartite network is <code>S-1</code>, and in a bipartite network it is <code>max(T,B)</code>.</p>
 <p>Connectance can therefore be transformed between 0 and 1, using the following approach: let <code>m</code> be the minimum number of interactions, and Co be the measured connectance, then the corrected value is <code>(Co-m)/(1-m)</code>. To our best knowledge, this is not standard practice, and therefore is not suggested as a function in the package.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/connectance.jl#L55-L70' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/connectance.jl#L55-L70' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.linkage_density' href='#EcologicalNetwork.linkage_density'>#</a>
 <strong><code>EcologicalNetwork.linkage_density</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>linkage_density(N::AbstractEcologicalNetwork)
 </code></pre>
 
 <p>Number of links divided by species richness.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/connectance.jl#L75-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/connectance.jl#L75-L79' class='documenter-source'>source</a><br></p>
 <p><a id='Degree-1'></a></p>
 <h2 id="degree">Degree</h2>
 <p><a id='EcologicalNetwork.degree' href='#EcologicalNetwork.degree'>#</a>
@@ -612,20 +612,20 @@
 <pre><code>degree(N::Unipartite)
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degree.jl#L21-L25' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degree.jl#L21-L25' class='documenter-source'>source</a><br></p>
 <p><strong>Degree of species in a bipartite network</strong></p>
 <pre><code>degree(N::Bipartite)
 </code></pre>
 
 <p>This is a concatenation of the out degree and the in degrees of nodes on both sizes, as measured by making the graph unipartite first. Rows are first, columns second.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degree.jl#L45-L53' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degree.jl#L45-L53' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.degree_var' href='#EcologicalNetwork.degree_var'>#</a>
 <strong><code>EcologicalNetwork.degree_var</code></strong> &mdash; <em>Function</em>.</p>
 <p><strong>Variance in the degree</strong></p>
 <pre><code>degree_var(N::UnipartiteProbaNetwork)
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degree.jl#L78-L82' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degree.jl#L78-L82' class='documenter-source'>source</a><br></p>
 <p><a id='Species-without-interactions-1'></a></p>
 <h2 id="species-without-interactions">Species without interactions</h2>
 <p><a id='EcologicalNetwork.isdegenerate' href='#EcologicalNetwork.isdegenerate'>#</a>
@@ -634,31 +634,31 @@
 </code></pre>
 
 <p>Networks are called degenerate if some species have no interactions, either at all, or with any species other than themselves. This is particularly useful to decide the networks to keep when generating samples for null models.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degenerate.jl#L1-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degenerate.jl#L1-L7' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.simplify!' href='#EcologicalNetwork.simplify!'>#</a>
 <strong><code>EcologicalNetwork.simplify!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>simplify!{T&lt;:AbstractBipartiteNetwork}(N::T)
 </code></pre>
 
 <p>Returns a new network in which species with no interactions have been removed.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degenerate.jl#L23-L27' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degenerate.jl#L23-L27' class='documenter-source'>source</a><br></p>
 <pre><code>simplify!(N::AbstractUnipartiteNetwork)
 </code></pre>
 
 <p>Modifies the network to drop all species without an interaction.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degenerate.jl#L49-L53' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degenerate.jl#L49-L53' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.simplify' href='#EcologicalNetwork.simplify'>#</a>
 <strong><code>EcologicalNetwork.simplify</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>simplify{T&lt;:AbstractBipartiteNetwork}(N::T)
 </code></pre>
 
 <p>Returns a new network in which species with no interactions have been removed.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degenerate.jl#L12-L16' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degenerate.jl#L12-L16' class='documenter-source'>source</a><br></p>
 <pre><code>simplify(N::AbstractUnipartiteNetwork)
 </code></pre>
 
 <p>Returns a new network in which species with no interactions have been removed.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/degenerate.jl#L38-L42' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/degenerate.jl#L38-L42' class='documenter-source'>source</a><br></p>
 <p><a id='Species-level-specificity-1'></a></p>
 <h2 id="species-level-specificity">Species-level specificity</h2>
 <p><a id='EcologicalNetwork.specificity' href='#EcologicalNetwork.specificity'>#</a>
@@ -671,7 +671,7 @@
 <blockquote>
 <p>Poisot, T., Canard, E., Mouquet, N., Hochberg, M.E., 2012. A comparative study of ecological specialization estimators. Methods in Ecology and Evolution 3, 537–544. doi:10.1111/j.2041-210X.2011.00174.x</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/specificity.jl#L23-L35' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/specificity.jl#L23-L35' class='documenter-source'>source</a><br></p>
 <p><strong>Paired Differences Index</strong></p>
 <pre><code>specificity(N::QuantitativeNetwork)
 </code></pre>
@@ -680,7 +680,7 @@
 <blockquote>
 <p>Poisot, T., Canard, E., Mouquet, N., Hochberg, M.E., 2012. A comparative study of ecological specialization estimators. Methods in Ecology and Evolution 3, 537–544. doi:10.1111/j.2041-210X.2011.00174.x</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/links/specificity.jl#L41-L54' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/links/specificity.jl#L41-L54' class='documenter-source'>source</a><br></p>
                 
                   
                 

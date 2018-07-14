@@ -539,7 +539,6 @@
 <h2 id="number-of-paths-and-shortest-path">Number of paths and shortest path</h2>
 <p><a id='EcologicalNetwork.number_of_paths' href='#EcologicalNetwork.number_of_paths'>#</a>
 <strong><code>EcologicalNetwork.number_of_paths</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Number of paths of length n between all pairs of nodes</strong></p>
 <pre><code>number_of_paths(N::Unipartite; n::Int64=2)
 </code></pre>
 
@@ -547,22 +546,33 @@
 <ul>
 <li><code>n</code> (def. 2), the path length</li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/paths.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/paths.jl#L1-L7' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.shortest_path' href='#EcologicalNetwork.shortest_path'>#</a>
 <strong><code>EcologicalNetwork.shortest_path</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Shortest paths</strong></p>
 <pre><code>shortest_path(N::UnipartiteNetwork; nmax::Int64=50)
 </code></pre>
 
 <p>This is not an optimal algorithm <em>at all</em>, but it will do given that most ecological networks are relatively small. The optional <code>nmax</code> argument is the longest shortest path length you will look for.</p>
-<p>In ecological networks, the longest shortest path tends not to be very long, so any value above 10 is probably overdoing it. Note that the default value is 50, which is above 10. But why just do, when you can overdo?</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/paths.jl#L19-L31' class='documenter-source'>source</a><br></p>
-<p><strong>Shortest paths</strong></p>
+<p>In ecological networks, the longest shortest path tends not to be very long, so any value above 10 is probably overdoing it. Note that the default value is 50, which is above 10.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/paths.jl#L17-L27' class='documenter-source'>source</a><br></p>
 <pre><code>shortest_path(N::UnipartiteQuantiNetwork; nmax::Int64=50)
 </code></pre>
 
 <p>This function will remove quantitative information, then measure the shortest path length.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/paths.jl#L43-L50' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/paths.jl#L39-L44' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetwork.bellman_ford' href='#EcologicalNetwork.bellman_ford'>#</a>
+<strong><code>EcologicalNetwork.bellman_ford</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>bellman_ford(N::T, source::K) where {T &lt;: DeterministicNetwork, K &lt;: AllowedSpeciesTypes}
+</code></pre>
+
+<p>Bellman-ford algorithm to return the shortest / easiest paths from a source species. Refer to the <code>bellman_ford</code> global documentation for the output format.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/paths.jl#L49-L54' class='documenter-source'>source</a><br></p>
+<pre><code>bellman_ford(N::T) where {T &lt;: DeterministicNetwork}
+</code></pre>
+
+<p>Bellman-ford algorithm to return the shortest / easiest paths between all pairs of species in the networks, as long as paths exists. This function will return a tuple, with fields <code>from</code>, <code>to</code> and <code>weight</code>. The number of elements in the tuple is the number of paths. This function works with quantitative and binary networks, and assumes that no interactions are negative.</p>
+<p>Currently, the Bellman-Ford algorithm is <em>slower</em> than the <code>shortest_path</code> function, but the arguments are returned in a more usable way. Note that the speed penalty is only valid when measuring the shortest paths in the entire network (and will be fixed relatively soon), and does not apply as much for the shortest paths from a single source node. </p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/paths.jl#L82-L96' class='documenter-source'>source</a><br></p>
 <p><a id='Centrality-measures-1'></a></p>
 <h2 id="centrality-measures">Centrality measures</h2>
 <p><a id='EcologicalNetwork.centrality_degree' href='#EcologicalNetwork.centrality_degree'>#</a>
@@ -572,7 +582,7 @@
 </code></pre>
 
 <p>Degree centrality, corrected by the maximum degree (the most central species has a degree of 1).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/centrality.jl#L44-L51' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/centrality.jl#L44-L51' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.centrality_closeness' href='#EcologicalNetwork.centrality_closeness'>#</a>
 <strong><code>EcologicalNetwork.centrality_closeness</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>centrality_closeness(N::UnipartiteNetwork; nmax::Int64=100)
@@ -582,7 +592,7 @@
 <blockquote>
 <p>Bavelas, A., 1950. Communication Patterns in Task‐Oriented Groups. The Journal of the Acoustical Society of America 22, 725–730. doi:10.1121/1.1906679</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/centrality.jl#L22-L30' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/centrality.jl#L22-L30' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.centrality_katz' href='#EcologicalNetwork.centrality_katz'>#</a>
 <strong><code>EcologicalNetwork.centrality_katz</code></strong> &mdash; <em>Function</em>.</p>
 <p><strong>Katz's centrality</strong></p>
@@ -593,7 +603,7 @@
 <blockquote>
 <p>Katz, L., 1953. A new status index derived from sociometric analysis. Psychometrika 18, 39–43. doi:10.1007/bf02289026</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/centrality.jl#L1-L13' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/centrality.jl#L1-L13' class='documenter-source'>source</a><br></p>
                 
                   
                 

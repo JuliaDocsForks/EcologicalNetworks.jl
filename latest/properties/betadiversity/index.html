@@ -559,17 +559,17 @@
 </code></pre>
 
 <p>Components of β-diversity as measured on species.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/partitions.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.βos' href='#EcologicalNetwork.βos'>#</a>
 <strong><code>EcologicalNetwork.βos</code></strong> &mdash; <em>Function</em>.</p>
 <p>Overlapping species (bipartite)</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L14-L16' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/partitions.jl#L14-L16' class='documenter-source'>source</a><br></p>
 <p>Overlapping species (unipartite)</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L28-L30' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/partitions.jl#L28-L30' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.βwn' href='#EcologicalNetwork.βwn'>#</a>
 <strong><code>EcologicalNetwork.βwn</code></strong> &mdash; <em>Function</em>.</p>
 <p>Whole network</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L42-L44' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/partitions.jl#L42-L44' class='documenter-source'>source</a><br></p>
 <p>One measure which is possibly missing is a function to build the metaweb, <em>i.e.</em> aggregate all species and interactions in a collection of networks. This can be done using <code>union</code>, <em>e.g.</em></p>
 <pre><code class="julia">N = nz_stream_foodweb() # Or any collection of networks
 metaweb = reduce(union, N)
@@ -583,7 +583,7 @@ metaweb = reduce(union, N)
 </code></pre>
 
 <p>Whittaker</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/measures.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/measures.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='Basic-operations-on-networks-1'></a></p>
 <h2 id="basic-operations-on-networks">Basic operations on networks</h2>
 <p>Internally, the functions for β-diversity rely on the usual operations on sets. The act of combining two networks, for example, is a <code>union</code> operation.</p>
@@ -593,36 +593,36 @@ metaweb = reduce(union, N)
 </code></pre>
 
 <p>Difference between two bipartite networks. This operation is <em>sensitive</em> to the order of arguments, as the resulting network will have the species present in the first network (and their interactions) only.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L103-L109' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/operations.jl#L103-L109' class='documenter-source'>source</a><br></p>
 <pre><code>setdiff(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
 </code></pre>
 
 <p>Difference between two unipartite networks. This operation is <em>sensitive</em> to the order of arguments, as the resulting network will have the species present in the first network (and their interactions) only.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L116-L122' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/operations.jl#L116-L122' class='documenter-source'>source</a><br></p>
 <p><a id='Base.union' href='#Base.union'>#</a>
 <strong><code>Base.union</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>union(X::T, Y::T) where {T&lt;:BipartiteNetwork}
 </code></pre>
 
 <p>Union of two bipartite networks – interactions <em>and</em> species which are present in either networks are also present in the final network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L5-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/operations.jl#L5-L10' class='documenter-source'>source</a><br></p>
 <pre><code>union(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
 </code></pre>
 
 <p>Union of two unipartite networks – interactions <em>and</em> species which are present in either networks are also present in the final network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L55-L60' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/operations.jl#L55-L60' class='documenter-source'>source</a><br></p>
 <p><a id='Base.intersect' href='#Base.intersect'>#</a>
 <strong><code>Base.intersect</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>intersect(X::T, Y::T) where {T&lt;:BipartiteNetwork}
 </code></pre>
 
 <p>Intersect between two bipartite networks. The resulting network has the <em>species and interactions</em> common to both networks. This can result in species being disconnected, if they are found in both networks but with no operations in common.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L33-L40' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/operations.jl#L33-L40' class='documenter-source'>source</a><br></p>
 <pre><code>intersect(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
 </code></pre>
 
 <p>Intersect between two unipartite networks. The resulting network has the <em>species and interactions</em> common to both networks. This can result in species being disconnected, if they are found in both networks but with no operations in common.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L82-L89' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/betadiversity/operations.jl#L82-L89' class='documenter-source'>source</a><br></p>
                 
                   
                 

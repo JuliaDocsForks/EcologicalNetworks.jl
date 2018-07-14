@@ -558,12 +558,12 @@
 </code></pre>
 
 <p>Converts a probabilistic network into a deterministic one by performing random draws. All interactions are treated as independent Bernoulli events. Note that this network is <em>not</em> check for degeneracy, <em>i.e.</em> species can end up with no interactions.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/draws.jl#L3-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/draws.jl#L3-L10' class='documenter-source'>source</a><br></p>
 <pre><code>rand(N::ProbabilisticNetwork, n::T) where {T&lt;:Integer}
 </code></pre>
 
 <p>Generates a number of random deterministic networks based on a probabilistic network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/draws.jl#L17-L22' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/draws.jl#L17-L22' class='documenter-source'>source</a><br></p>
 <p><a id='Generate-probabilistic-networks-from-deterministic-networks-1'></a></p>
 <h2 id="generate-probabilistic-networks-from-deterministic-networks">Generate probabilistic networks from deterministic networks</h2>
 <p>These functions generate a probabilistic network from a deterministic network, where the probability of every interaction is determined by the degree distribution (or connectance) of the network.</p>
@@ -573,28 +573,28 @@
 </code></pre>
 
 <p>Given a matrix <code>A</code>, <code>null1(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the connectance of <code>A</code>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/null.jl#L1-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/null.jl#L1-L7' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.null2' href='#EcologicalNetwork.null2'>#</a>
 <strong><code>EcologicalNetwork.null2</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>null2(N::BinaryNetwork)
 </code></pre>
 
 <p>Given a matrix <code>A</code>, <code>null2(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the degree of each species.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/null.jl#L45-L51' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/null.jl#L45-L51' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.null3in' href='#EcologicalNetwork.null3in'>#</a>
 <strong><code>EcologicalNetwork.null3in</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>null3in(N::BinaryNetwork)
 </code></pre>
 
 <p>Given a matrix <code>A</code>, <code>null3in(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the in-degree (number of predecessors) of each species, divided by the total number of possible predecessors.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/null.jl#L29-L36' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/null.jl#L29-L36' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.null3out' href='#EcologicalNetwork.null3out'>#</a>
 <strong><code>EcologicalNetwork.null3out</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>null3out(N::BinaryNetwork)
 </code></pre>
 
 <p>Given a matrix <code>A</code>, <code>null3out(A)</code> returns a matrix with the same dimensions, where every interaction happens with a probability equal to the out-degree (number of successors) of each species, divided by the total number of possible successors.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/null.jl#L13-L20' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/null.jl#L13-L20' class='documenter-source'>source</a><br></p>
 <p><a id='Shuffle-interactions-1'></a></p>
 <h2 id="shuffle-interactions">Shuffle interactions</h2>
 <p><a id='Base.Random.shuffle!' href='#Base.Random.shuffle!'>#</a>
@@ -611,14 +611,14 @@
 </ul>
 <p>Note that this function will conserve the degree (when appropriate under the selected constraint) of <em>every</em> species. This function will take number_of_swaps (1000) interactions, swap them, and return a copy of the network.</p>
 <p>If the keyword arguments are invalid, the function will throw an <code>ArgumentError</code>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/shuffle.jl#L81-L98' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/shuffle.jl#L81-L98' class='documenter-source'>source</a><br></p>
 <p><a id='Base.Random.shuffle' href='#Base.Random.shuffle'>#</a>
 <strong><code>Base.Random.shuffle</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>shuffle(N::BinaryNetwork; constraint::Symbol=:degree, number_of_swaps::Int64=1000)
 </code></pre>
 
 <p>Return a shuffled copy of the network. See <code>shuffle!</code> for a documentation of the keyword arguments.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/rand/shuffle.jl#L70-L74' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/shuffle.jl#L70-L74' class='documenter-source'>source</a><br></p>
                 
                   
                 

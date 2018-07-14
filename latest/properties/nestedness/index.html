@@ -482,24 +482,24 @@
 </code></pre>
 
 <p>This returns the nestedness of the entire matrix.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/nestedness.jl#L18-L22' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/nestedness.jl#L18-L22' class='documenter-source'>source</a><br></p>
 <pre><code>η(N::T, i::Int64) where {T &lt;: Union{BipartiteNetwork, BipartiteProbaNetwork}}
 </code></pre>
 
 <p>Returns the nestedness of a margin of the network, using η. The second argument can be <code>1</code> (for nestedness of rows/top level) or <code>2</code> (for nestedness of columns/bottom level). This function will throw an <code>ArgumentError</code> if you use an invalid value for <code>i</code>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/nestedness.jl#L27-L34' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/nestedness.jl#L27-L34' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.nodf' href='#EcologicalNetwork.nodf'>#</a>
 <strong><code>EcologicalNetwork.nodf</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>nodf(N::T) where {T &lt;: Union{BipartiteNetwork,BipartiteQuantitativeNetwork}}
 </code></pre>
 
 <p>If the network is quantitative, then <em>WNODF</em> is measured instead of <em>NODF</em>. Note that in <em>all</em> situations, the value goes between 0 (not nested) to 1 (perfectly nested). This is a change with regard to the original papers, in which the maximal value is 100. The nestedness for the entire network is returned.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/nestedness.jl#L108-L115' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/nestedness.jl#L108-L115' class='documenter-source'>source</a><br></p>
 <pre><code>nodf(N::T, i::Int64) where {T &lt;: Union{BipartiteNetwork,BipartiteQuantitativeNetwork}}
 </code></pre>
 
 <p>Returns <code>nodf</code> for a margin of the network. The <code>i</code> argument can be 1 for top-level, 2 for bottom level, and the function will throw an <code>ArgumentError</code> if an invalid value is used. For quantitative networks, <em>WNODF</em> is used.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/community/nestedness.jl#L120-L126' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/community/nestedness.jl#L120-L126' class='documenter-source'>source</a><br></p>
                 
                   
                 

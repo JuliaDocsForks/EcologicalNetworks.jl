@@ -483,39 +483,39 @@
 </code></pre>
 
 <p>Projects a deterministic bipartite network in its unipartite representation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/conversions.jl#L3-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/conversions.jl#L3-L7' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{UnipartiteProbabilisticNetwork}, N::T) where {T &lt;: BipartiteProbabilisticNetwork}
 </code></pre>
 
 <p>Projects a probabilistic bipartite network in its unipartite representation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/conversions.jl#L16-L20' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/conversions.jl#L16-L20' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{UnipartiteQuantitativeNetwork}, N::T) where {T &lt;: BipartiteQuantitativeNetwork}
 </code></pre>
 
 <p>Projects a quantitative bipartite network in its unipartite representation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/conversions.jl#L29-L33' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/conversions.jl#L29-L33' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{UnipartiteNetwork}, N::T) where {T &lt;: UnipartiteQuantitativeNetwork}
 </code></pre>
 
 <p>Convert a unipartite quantitative network to a unipartite binary network. This amounts to <em>removing</em> the quantitative information.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/conversions.jl#L42-L47' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/conversions.jl#L42-L47' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{BipartiteNetwork}, N::T) where {T &lt;: BipartiteQuantitativeNetwork}
 </code></pre>
 
 <p>Convert a bipartite quantitative network to a bipartite binary network. This amounts to <em>removing</em> the quantitative information.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/conversions.jl#L54-L59' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/conversions.jl#L54-L59' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{AbstractUnipartiteNetwork}, N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Projects any bipartite network in its unipartite representation. This function will call the correct type-to-type <code>convert</code> function depending on the type of the input network.</p>
 <p>The type to be converted to <em>must</em> be <code>AbstractUnipartiteNetwork</code> – for example, converting a bipartite probabilistic network to a probabilistic unipartite network is not a meaningful operation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/conversions.jl#L67-L77' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/conversions.jl#L67-L77' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{BinaryNetwork}, N::QuantitativeNetwork)
 </code></pre>
 
 <p>Projects any bipartite network in its unipartite representation. This function will call the correct type-to-type <code>convert</code> function depending on the type of the input network.</p>
 <p>This function does <em>not</em> work for probabilistic networks. The operation of generating a deterministic network from a probabilistic one is different from a simple conversion: it can be done either through random draws, or by selecting only interactions with a probability greater than 0 (<code>N&gt;0.0</code> will do this).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/conversions.jl#L90-L101' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/conversions.jl#L90-L101' class='documenter-source'>source</a><br></p>
                 
                   
                 

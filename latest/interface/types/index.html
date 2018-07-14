@@ -650,7 +650,7 @@
 </code></pre>
 
 <p>Returns a tuple with two types: the type of the interactions, and the type of the species objects.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L157-L162' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L157-L162' class='documenter-source'>source</a><br></p>
 <p><a id='Union-types-1'></a></p>
 <h2 id="union-types">Union types</h2>
 <p>All networks are grouped upon the <code>AbstractEcologicalNetwork</code> type:</p>
@@ -658,69 +658,69 @@
 <strong><code>EcologicalNetwork.AbstractEcologicalNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>All networks in the package belong to the <code>AbstractEcologicalNetwork</code> type. They all have a field <code>A</code> to represent interactions as a <em>matrix</em>, and a number of fields for species. See the documentation for <code>AbstractBipartiteNetwork</code> and <code>AbstractUnipartiteNetwork</code>, as well as <code>AllowedSpeciesTypes</code> for the allowed types for species.</p>
 <p>Note that <em>all</em> species in a network (including both levels of a bipartite network) <em>must</em> have the same type. For example, <code>["a", :b, "c"]</code> is not a valid array of species, as not all its elements have the same type.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L3-L13' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L3-L13' class='documenter-source'>source</a><br></p>
 <p>All allowed types for nodes are part of the <code>AllowedSpeciesTypes</code> type:</p>
 <p><a id='EcologicalNetwork.AllowedSpeciesTypes' href='#EcologicalNetwork.AllowedSpeciesTypes'>#</a>
 <strong><code>EcologicalNetwork.AllowedSpeciesTypes</code></strong> &mdash; <em>Constant</em>.</p>
 <p>The <code>AllowedSpeciesTypes</code> union is used to restrict the type of objects that can be used to identify the species in a network. Currently, this is limited to <code>Symbol</code> and <code>String</code>. Numeric types (esp. integers) will <em>never</em> be allowed, because they are used for positional access of species and interactions. As the ecosystem of packages for ecology matures, more types will be added to this union.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L41-L48' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L41-L48' class='documenter-source'>source</a><br></p>
 <p><a id='By-partiteness-1'></a></p>
 <h3 id="by-partiteness">By partiteness</h3>
 <p><a id='EcologicalNetwork.AbstractBipartiteNetwork' href='#EcologicalNetwork.AbstractBipartiteNetwork'>#</a>
 <strong><code>EcologicalNetwork.AbstractBipartiteNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>This abstract type groups all bipartite networks, regardless of the type of information. Bipartite networks have <em>two</em> fields for species, named <code>T</code> (for top, corresponding to matrix <em>rows</em>), and <code>B</code> (for bottom, matrix <em>columns</em>).</p>
 <p>Any bipartite network can be declared (we'll use the example of a binary network) either using <code>BipartiteNetwork(A, T, B)</code> (assuming <code>A</code> is a matrix of interactions and <code>T</code> and <code>B</code> are vectors of species names for the top and bottom level), or <code>BipartiteNetwork(A)</code>, in which case the species will be named automatically.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L28-L38' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L28-L38' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.AbstractUnipartiteNetwork' href='#EcologicalNetwork.AbstractUnipartiteNetwork'>#</a>
 <strong><code>EcologicalNetwork.AbstractUnipartiteNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>This abstract type groups all unipartite networks, regardless of the type of information. Unipartite networks have <em>a single</em> field for species, named <code>S</code>, which has the same number of elements as the size of the matrix.</p>
 <p>Any unipartite network can be declared (we'll use the example of a binary network) either using <code>UnipartiteNetwork(A, S)</code> (assuming <code>A</code> is a matrix of interactions and <code>S</code> is a vector of species names), or <code>UnipartiteNetwork(A)</code>, in which case the species will be named automatically.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L16-L25' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L16-L25' class='documenter-source'>source</a><br></p>
 <p><a id='By-interaction-type-1'></a></p>
 <h3 id="by-interaction-type">By interaction type</h3>
 <p><a id='EcologicalNetwork.BinaryNetwork' href='#EcologicalNetwork.BinaryNetwork'>#</a>
 <strong><code>EcologicalNetwork.BinaryNetwork</code></strong> &mdash; <em>Constant</em>.</p>
 <p>This is a union type for both Bipartite and Unipartite deterministic networks. All networks from these class have adjacency matrices represented as arrays of Boolean values.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L138-L142' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L138-L142' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.QuantitativeNetwork' href='#EcologicalNetwork.QuantitativeNetwork'>#</a>
 <strong><code>EcologicalNetwork.QuantitativeNetwork</code></strong> &mdash; <em>Constant</em>.</p>
 <p>This is a union type for both unipartite and bipartite quantitative networks. All networks of this type have adjancency matrices as two-dimensional arrays of numbers.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L145-L149' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L145-L149' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.ProbabilisticNetwork' href='#EcologicalNetwork.ProbabilisticNetwork'>#</a>
 <strong><code>EcologicalNetwork.ProbabilisticNetwork</code></strong> &mdash; <em>Constant</em>.</p>
 <p>This is a union type for both Bipartite and Unipartite probabilistic networks. Probabilistic networks are represented as arrays of floating point values ∈ [0;1].</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L131-L135' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L131-L135' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.DeterministicNetwork' href='#EcologicalNetwork.DeterministicNetwork'>#</a>
 <strong><code>EcologicalNetwork.DeterministicNetwork</code></strong> &mdash; <em>Constant</em>.</p>
 <p>All non-probabilistic networks</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L152-L154' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L152-L154' class='documenter-source'>source</a><br></p>
 <p><a id='List-of-available-types-1'></a></p>
 <h2 id="list-of-available-types">List of available types</h2>
 <p>These are the types that you <em>actually</em> declare and use. They are presented last because it is easier to understand what they are when you get a sense for the different union types.</p>
 <p><a id='EcologicalNetwork.UnipartiteNetwork' href='#EcologicalNetwork.UnipartiteNetwork'>#</a>
 <strong><code>EcologicalNetwork.UnipartiteNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>An unipartite deterministic network is a matrix of boolean values.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L64-L66' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L64-L66' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.BipartiteNetwork' href='#EcologicalNetwork.BipartiteNetwork'>#</a>
 <strong><code>EcologicalNetwork.BipartiteNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>A bipartite deterministic network is a matrix of boolean values.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L51-L53' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L51-L53' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.UnipartiteQuantitativeNetwork' href='#EcologicalNetwork.UnipartiteQuantitativeNetwork'>#</a>
 <strong><code>EcologicalNetwork.UnipartiteQuantitativeNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>A unipartite quantitative network is a square matrix of numbers.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L119-L121' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L119-L121' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.BipartiteQuantitativeNetwork' href='#EcologicalNetwork.BipartiteQuantitativeNetwork'>#</a>
 <strong><code>EcologicalNetwork.BipartiteQuantitativeNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>A bipartite quantitative network is matrix of numbers. It is assumed that the interaction strength are <em>positive</em>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L91-L94' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L91-L94' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.UnipartiteProbabilisticNetwork' href='#EcologicalNetwork.UnipartiteProbabilisticNetwork'>#</a>
 <strong><code>EcologicalNetwork.UnipartiteProbabilisticNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>A unipartite probabilistic network is a square matrix of floating point numbers, all of which must be between 0 and 1.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L105-L108' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L105-L108' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetwork.BipartiteProbabilisticNetwork' href='#EcologicalNetwork.BipartiteProbabilisticNetwork'>#</a>
 <strong><code>EcologicalNetwork.BipartiteProbabilisticNetwork</code></strong> &mdash; <em>Type</em>.</p>
 <p>A bipartite probabilistic network is a matrix of floating point numbers, all of which must be between 0 and 1.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/types/declarations.jl#L76-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/declarations.jl#L76-L79' class='documenter-source'>source</a><br></p>
                 
                   
                 
