@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Analysis of ecological networks">
+        <meta name="description" content="Analysis of ecological network data">
       
       
       
@@ -46,6 +46,12 @@
     
       <link rel="stylesheet" href="/assets/stylesheets/application.ba0fd1a6.css">
       
+        <link rel="stylesheet" href="/assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -54,18 +60,20 @@
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:300,400,400i,700|Cousine">
+        <style>body,input{font-family:"Arimo","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cousine","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="/assets/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="/assets/Documenters.css">
+      <link rel="stylesheet" href="/assets/Documenter.css">
     
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="amber">
   
     <svg class="md-svg">
       <defs>
@@ -103,7 +111,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="/" title="EcologicalNetwork.jl" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">timeline</i>
           
         </a>
       </div>
@@ -199,7 +207,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">timeline</i>
       
     </span>
     EcologicalNetwork.jl
@@ -247,8 +255,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/types/" title="Different types of networks" class="md-nav__link">
-      Different types of networks
+    <a href="/toc/" title="Table of contents" class="md-nav__link">
+      Table of contents
     </a>
   </li>
 
@@ -258,10 +266,58 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Interface
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Interface
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="/data/" title="Datasets" class="md-nav__link">
-      Datasets
+    <a href="/interface/types/" title="Types" class="md-nav__link">
+      Types
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/interface/conversions/" title="Type conversions" class="md-nav__link">
+      Type conversions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/interface/highlevel/" title="Core functions" class="md-nav__link">
+      Core functions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -275,11 +331,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Use cases
+      Network measures
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Use cases
+        Network measures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -290,8 +346,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/usecase/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
+    <a href="/properties/links/" title="Links" class="md-nav__link">
+      Links
     </a>
   </li>
 
@@ -302,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/usecase/modularity/" title="Modularity" class="md-nav__link">
+    <a href="/properties/modularity/" title="Modularity" class="md-nav__link">
       Modularity
     </a>
   </li>
@@ -314,7 +370,19 @@
 
 
   <li class="md-nav__item">
-    <a href="/usecase/motifs/" title="Motifs" class="md-nav__link">
+    <a href="/properties/nestedness/" title="Nestedness" class="md-nav__link">
+      Nestedness
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/properties/motifs/" title="Motifs" class="md-nav__link">
       Motifs
     </a>
   </li>
@@ -326,44 +394,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/usecase/plot/" title="Plots" class="md-nav__link">
-      Plots
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Network structure
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Network structure
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/community/nlinks/" title="Linkage density and connectance" class="md-nav__link">
-      Linkage density and connectance
+    <a href="/properties/paths/" title="Centrality and paths" class="md-nav__link">
+      Centrality and paths
     </a>
   </li>
 
@@ -374,8 +406,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/community/degree/" title="Degree distribution" class="md-nav__link">
-      Degree distribution
+    <a href="/properties/randomization/" title="Randomization" class="md-nav__link">
+      Randomization
     </a>
   </li>
 
@@ -386,152 +418,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/community/motifs/" title="Interaction motifs" class="md-nav__link">
-      Interaction motifs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/community/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/community/modularity/" title="Modularity" class="md-nav__link">
-      Modularity
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Species-level measures
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Species-level measures
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/species/specificity/" title="Specificity" class="md-nav__link">
-      Specificity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/species/centrality/" title="Centrality" class="md-nav__link">
-      Centrality
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/species/foodweb/" title="Food-web specific" class="md-nav__link">
-      Food-web specific
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Hypothesis testing
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Hypothesis testing
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/nhst/nullmodels/" title="Probabilistic null models" class="md-nav__link">
-      Probabilistic null models
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/nhst/swaps/" title="Network permutations" class="md-nav__link">
-      Network permutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/nhst/nhst/" title="Null Hypothesis Significance Testing" class="md-nav__link">
-      Null Hypothesis Significance Testing
+    <a href="/properties/betadiversity/" title="β-diversity" class="md-nav__link">
+      β-diversity
     </a>
   </li>
 
@@ -590,7 +478,7 @@
       
       <script>app.initialize({version:"0.17.5",url:{base:""}})</script>
       
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="/assets/mathjaxhelper.js"></script>
       

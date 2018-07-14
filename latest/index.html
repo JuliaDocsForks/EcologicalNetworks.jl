@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Analysis of ecological networks">
+        <meta name="description" content="Analysis of ecological network data">
       
       
       
@@ -46,6 +46,12 @@
     
       <link rel="stylesheet" href="./assets/stylesheets/application.ba0fd1a6.css">
       
+        <link rel="stylesheet" href="./assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -54,18 +60,20 @@
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:300,400,400i,700|Cousine">
+        <style>body,input{font-family:"Arimo","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cousine","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="./assets/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="./assets/Documenters.css">
+      <link rel="stylesheet" href="./assets/Documenter.css">
     
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="amber">
   
     <svg class="md-svg">
       <defs>
@@ -96,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#analysis-of-ecological-networks" tabindex="1" class="md-skip">
+      <a href="#ecologicalnetwork" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +115,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="." title="EcologicalNetwork.jl" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">timeline</i>
           
         </a>
       </div>
@@ -203,7 +211,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">timeline</i>
       
     </span>
     EcologicalNetwork.jl
@@ -247,10 +255,114 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Home
+      </label>
+    
     <a href="." title="Home" class="md-nav__link md-nav__link--active">
       Home
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-philosophy" title="Package philosophy" class="md-nav__link">
+    Package philosophy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-should-i-use-this-package" title="Why should I use this package?" class="md-nav__link">
+    Why should I use this package?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#but-it-doesnt-even-make-figures" title="But it doesn't even make figures!" class="md-nav__link">
+    But it doesn't even make figures!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-it-doesnt-even-generate-random-networks" title="And it doesn't even generate random networks!" class="md-nav__link">
+    And it doesn't even generate random networks!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-worse-you-forgot-my-favorite-method" title="And worse, you forgot my favorite method!" class="md-nav__link">
+    And worse, you forgot my favorite method!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-diversity" title="Network β-diversity" class="md-nav__link">
+    Network β-diversity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specificity" title="Specificity" class="md-nav__link">
+    Specificity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probabilistic-networks" title="Probabilistic networks" class="md-nav__link">
+    Probabilistic networks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-contribute" title="How can I contribute?" class="md-nav__link">
+    How can I contribute?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -260,8 +372,8 @@
 
 
   <li class="md-nav__item">
-    <a href="types/" title="Different types of networks" class="md-nav__link">
-      Different types of networks
+    <a href="toc/" title="Table of contents" class="md-nav__link">
+      Table of contents
     </a>
   </li>
 
@@ -271,10 +383,58 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Interface
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Interface
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="data/" title="Datasets" class="md-nav__link">
-      Datasets
+    <a href="interface/types/" title="Types" class="md-nav__link">
+      Types
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="interface/conversions/" title="Type conversions" class="md-nav__link">
+      Type conversions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="interface/highlevel/" title="Core functions" class="md-nav__link">
+      Core functions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -288,11 +448,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Use cases
+      Network measures
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Use cases
+        Network measures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -303,8 +463,8 @@
 
 
   <li class="md-nav__item">
-    <a href="usecase/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
+    <a href="properties/links/" title="Links" class="md-nav__link">
+      Links
     </a>
   </li>
 
@@ -315,7 +475,7 @@
 
 
   <li class="md-nav__item">
-    <a href="usecase/modularity/" title="Modularity" class="md-nav__link">
+    <a href="properties/modularity/" title="Modularity" class="md-nav__link">
       Modularity
     </a>
   </li>
@@ -327,7 +487,19 @@
 
 
   <li class="md-nav__item">
-    <a href="usecase/motifs/" title="Motifs" class="md-nav__link">
+    <a href="properties/nestedness/" title="Nestedness" class="md-nav__link">
+      Nestedness
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="properties/motifs/" title="Motifs" class="md-nav__link">
       Motifs
     </a>
   </li>
@@ -339,44 +511,8 @@
 
 
   <li class="md-nav__item">
-    <a href="usecase/plot/" title="Plots" class="md-nav__link">
-      Plots
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Network structure
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Network structure
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="community/nlinks/" title="Linkage density and connectance" class="md-nav__link">
-      Linkage density and connectance
+    <a href="properties/paths/" title="Centrality and paths" class="md-nav__link">
+      Centrality and paths
     </a>
   </li>
 
@@ -387,8 +523,8 @@
 
 
   <li class="md-nav__item">
-    <a href="community/degree/" title="Degree distribution" class="md-nav__link">
-      Degree distribution
+    <a href="properties/randomization/" title="Randomization" class="md-nav__link">
+      Randomization
     </a>
   </li>
 
@@ -399,152 +535,8 @@
 
 
   <li class="md-nav__item">
-    <a href="community/motifs/" title="Interaction motifs" class="md-nav__link">
-      Interaction motifs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="community/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="community/modularity/" title="Modularity" class="md-nav__link">
-      Modularity
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Species-level measures
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Species-level measures
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="species/specificity/" title="Specificity" class="md-nav__link">
-      Specificity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="species/centrality/" title="Centrality" class="md-nav__link">
-      Centrality
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="species/foodweb/" title="Food-web specific" class="md-nav__link">
-      Food-web specific
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Hypothesis testing
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Hypothesis testing
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="nhst/nullmodels/" title="Probabilistic null models" class="md-nav__link">
-      Probabilistic null models
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="nhst/swaps/" title="Network permutations" class="md-nav__link">
-      Network permutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="nhst/nhst/" title="Null Hypothesis Significance Testing" class="md-nav__link">
-      Null Hypothesis Significance Testing
+    <a href="properties/betadiversity/" title="β-diversity" class="md-nav__link">
+      β-diversity
     </a>
   </li>
 
@@ -571,6 +563,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-philosophy" title="Package philosophy" class="md-nav__link">
+    Package philosophy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-should-i-use-this-package" title="Why should I use this package?" class="md-nav__link">
+    Why should I use this package?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#but-it-doesnt-even-make-figures" title="But it doesn't even make figures!" class="md-nav__link">
+    But it doesn't even make figures!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-it-doesnt-even-generate-random-networks" title="And it doesn't even generate random networks!" class="md-nav__link">
+    And it doesn't even generate random networks!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-worse-you-forgot-my-favorite-method" title="And worse, you forgot my favorite method!" class="md-nav__link">
+    And worse, you forgot my favorite method!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-diversity" title="Network β-diversity" class="md-nav__link">
+    Network β-diversity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specificity" title="Specificity" class="md-nav__link">
+    Specificity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probabilistic-networks" title="Probabilistic networks" class="md-nav__link">
+    Probabilistic networks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-contribute" title="How can I contribute?" class="md-nav__link">
+    How can I contribute?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -584,18 +667,65 @@
                   <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p><a id='Analysis-of-ecological-networks-1'></a></p>
-<h1 id="analysis-of-ecological-networks">Analysis of ecological networks</h1>
-<p>The <code>EcologicalNetwork</code> package offers a convenient interface to analyze several types of ecological networks. Rather than providing multiple measures of the same property, we selected measures that have been demonstrated to work and be robust.</p>
-<p>You can read more about the selection of measures in:</p>
-<blockquote>
-<p>Delmas, E. et al. Analyzing ecological networks of species interactions. bioRxiv 112540 (2017). doi:10.1101/112540</p>
-</blockquote>
-<p>The structure of this documentation is trying to match (as much as possible) the structure of Delmas <em>et al.</em> (<a href="http://biorxiv.org/content/early/2017/02/28/112540">2017</a>), where most of the measures presented here are reviewed.</p>
-<p>This package also offers an interface for probabilistic network, about which you can read more in:</p>
-<blockquote>
-<p>Poisot, T. et al. The structure of probabilistic networks. Methods in Ecology and Evolution 7, 303–312 (2016). doi: 10.1111/2041-210X.12468</p>
-</blockquote>
+                <p><a id='EcologicalNetwork-1'></a></p>
+<h1 id="ecologicalnetwork">EcologicalNetwork</h1>
+<p>This package provides a common interface for the analysis of ecological networks, using <code>julia</code>. It is <em>very</em> opinionated about the "right" way to do things, but we have documented our opinions in several publications (see the references at the bottom of this page).</p>
+<p><a id='Package-philosophy-1'></a></p>
+<h2 id="package-philosophy">Package philosophy</h2>
+<p>The package is built around a typesystem for networks, which is intended to capture the different types of data and communities ecologists need to handle. This makes the package extensible, both by writing additional methods with a very fine-tuned dispatch, or by adding additional types that should work out of the box (or be very close to).</p>
+<p>This package is a <em>library</em> for the analysis of ecological networks. On purpose, we do not provide "wrapper"-type functions that would perform an entire analysis. We experimented with this idea during development, and rapidly realized that even for the most simple research project, we needed to make small tweaks that made the wrappers a nuisance. We decided to give you lego blocks, and it's your job to build the kick-ass spaceship.</p>
+<p>We tried to avoid making the package into yet another Domain Specific Language. This means that when an operation should be expressed using the julian syntax, we made it this way. Transforming networks from a type to another is done with <code>convert</code>. Random networks are drawn with <code>rand</code>. Swapping of interactions is done with <code>shuffle</code>. There is support for slicing of networks, as well as the entire operations on sets. A lot of methods from <code>Base</code> have been overloaded, and this <em>should</em> make the code easy to write and read.</p>
+<p><a id='Why-should-I-use-this-package?-1'></a></p>
+<h2 id="why-should-i-use-this-package">Why should I use this package?</h2>
+<p>It offers a single interface to analyse almost all type of networks for ecology. It's somewhat fast (very specialized packages are likely to be faster). It's built around the very best practices in network analysis. We think the type system is very cool. It's very well tested and adequately documented. We used it for research and teaching for months before releasing it. It's actively maintained and we will keep adding functionalities.</p>
+<p>You don't have to use it if you don't want to.</p>
+<p><a id='But-it-doesn't-even-make-figures!-1'></a></p>
+<h3 id="but-it-doesnt-even-make-figures">But it doesn't even make figures!</h3>
+<p>This is coming soon.</p>
+<p><a id='And-it-doesn't-even-generate-random-networks!-1'></a></p>
+<h3 id="and-it-doesnt-even-generate-random-networks">And it doesn't even generate random networks!</h3>
+<p>This is coming sooner.</p>
+<p><a id='And-worse,-you-forgot-my-favorite-method!-1'></a></p>
+<h3 id="and-worse-you-forgot-my-favorite-method">And worse, you forgot my favorite method!</h3>
+<p>Yeah, about that. We probably didn't.</p>
+<p>A lot of methods were considered for inclusion in the package, but ultimately discarded because we were not 100% confident in their robustness, reliability, validity, or interpretation. As we said, the package is <em>very</em> opinionated about the right way to do things, and new functions require more time for maintenance and testing; it makes sense for us to focus on things we trust.</p>
+<p>If your favorite measure or method is missing, there are two solutions. First, this package is essentialy a library of functions to build network analyses, so you can use this to create a function that does what you want. For example, if you want to take the square root of a quantitative network, you can overload the <code>√</code> method from base this way:</p>
+<pre><code class="julia">import Base: √
+
+function √(N::T) where {T &lt;: QuantitativeNetwork}
+  # Get the new type for the output
+  NewType = T &lt;: AbstractBipartiteNetwork ? BipartiteQuantitativeNetwork : UnipartiteQuantitativeNetwork
+  # Take the square root of the interaction strength
+  sqrt_matrix = sqrt.(N.A)
+  # Return a new network with the correct types
+  return NewType{typeof(sqrt_matrix),eltype(N)[2]}(sqrt_matrix, EcologicalNetwork.species_objects(N)...)
+end
+</code></pre>
+
+<p>The second solution (which is actually a second <em>step</em> after you have been writing your own method), is to submit a pull request to the package, to have your new methods available in the next release. Currently, we will be very selective about which methods are added. In the future (presumably shortly after the release of <em>Julia</em> <code>v1.0</code>), we will start a companion package to provide additional methods.</p>
+<p><a id='References-1'></a></p>
+<h2 id="references">References</h2>
+<p>About the analysis of ecological networks in general, the package covers (or will cover over time) most of the measures we identified as robust in the following publication:</p>
+<p>Delmas, Eva, Mathilde Besson, Marie-Helene Brice, Laura Burkle, Giulio V. Dalla Riva, Marie-Josée Fortin, Dominique Gravel, et al. “Analyzing Ecological Networks of Species Interactions.” BioRxiv, (2017), 112540. https://doi.org/10.1101/112540.</p>
+<p>We highly recommend we keep it nearby when using the package. A lot of decisions taken during development are grounded in the analysis of the literature we conducted over a few years.</p>
+<p><a id='Network-β-diversity-1'></a></p>
+<h3 id="network-diversity">Network β-diversity</h3>
+<p>The analysis of network dissimilarity is done exactly as described in:</p>
+<p>Poisot, Timothée, Elsa Canard, David Mouillot, Nicolas Mouquet, and Dominique Gravel. “The Dissimilarity of Species Interaction Networks.” Ecology Letters 15, no. 12 (2012): 1353–1361. https://doi.org/10.1111/ele.12002.</p>
+<p>The measures for β-diversity (and the approach of partitioning variation in sets) is done exactly as described in:</p>
+<p>Koleff, Patricia, Kevin J. Gaston, and Jack J. Lennon. “Measuring Beta Diversity for Presence–absence Data.” Journal of Animal Ecology 72, no. 3 (2003): 367–82. https://doi.org/10.1046/j.1365-2656.2003.00710.x.</p>
+<p>The functions presented in their table are implemented as <code>KGLXX</code>, where <code>XX</code> is the number of the function on two digits (<em>i.e.</em> the second measure of β-diversity is <code>KGL02</code>).</p>
+<p><a id='Specificity-1'></a></p>
+<h3 id="specificity">Specificity</h3>
+<p>Poisot, Timothee, Elsa Canard, Nicolas Mouquet, and Michael E Hochberg. “A Comparative Study of Ecological Specialization Estimators.” Methods in Ecology and Evolution 3, no. 3 (2012): 537–44. https://doi.org/10.1111/j.2041-210X.2011.00174.x.</p>
+<p><a id='Probabilistic-networks-1'></a></p>
+<h3 id="probabilistic-networks">Probabilistic networks</h3>
+<p>Poisot, Timothée, Alyssa R. Cirtwill, Kévin Cazelles, Dominique Gravel, Marie-Josée Fortin, and Daniel B. Stouffer. “The Structure of Probabilistic Networks.” Methods in Ecology and Evolution 7, no. 3 (2016): 303–12. https://doi.org/10.1111/2041-210X.12468.</p>
+<p><a id='How-can-I-contribute?-1'></a></p>
+<h2 id="how-can-i-contribute">How can I contribute?</h2>
+<p>Good question!</p>
+<p>The easiest way to contribute is to use the package, and <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/issues">open an issue</a> whenever you can't manage to do something, think the syntax is not clear, or the documentation is confusing. This is seriously one of the best ways to help.</p>
+<p>If you want to contribute code, you can fork this repository, and start adding the functions you want, or changing the code. Please work from the <code>develop</code> branch (<code>master</code> does not accept pull requests except from maintainers, and cannot be pushed to unless a series of conditions are met). It's better if all of your code is tested and documented, but we will work with you when receiving the pull request anyways.</p>
                 
                   
                 
@@ -617,13 +747,13 @@
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="types/" title="Different types of networks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="toc/" title="Table of contents" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Different types of networks
+                Table of contents
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -657,7 +787,7 @@
       
       <script>app.initialize({version:"0.17.5",url:{base:"."}})</script>
       
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="./assets/mathjaxhelper.js"></script>
       

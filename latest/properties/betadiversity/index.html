@@ -1,0 +1,696 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Analysis of ecological network data">
+      
+      
+      
+        <meta name="author" content="Timothée Poisot">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>β-diversity - EcologicalNetwork.jl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:300,400,400i,700|Cousine">
+        <style>body,input{font-family:"Arimo","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cousine","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../assets/Documenter.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#network-diversity" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EcologicalNetwork.jl" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">timeline</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                EcologicalNetwork.jl
+              </span>
+              <span class="md-header-nav__topic">
+                β-diversity
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">timeline</i>
+      
+    </span>
+    EcologicalNetwork.jl
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../toc/" title="Table of contents" class="md-nav__link">
+      Table of contents
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Interface
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Interface
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interface/types/" title="Types" class="md-nav__link">
+      Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interface/conversions/" title="Type conversions" class="md-nav__link">
+      Type conversions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interface/highlevel/" title="Core functions" class="md-nav__link">
+      Core functions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Network measures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Network measures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../links/" title="Links" class="md-nav__link">
+      Links
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modularity/" title="Modularity" class="md-nav__link">
+      Modularity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nestedness/" title="Nestedness" class="md-nav__link">
+      Nestedness
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../motifs/" title="Motifs" class="md-nav__link">
+      Motifs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../paths/" title="Centrality and paths" class="md-nav__link">
+      Centrality and paths
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../randomization/" title="Randomization" class="md-nav__link">
+      Randomization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        β-diversity
+      </label>
+    
+    <a href="./" title="β-diversity" class="md-nav__link md-nav__link--active">
+      β-diversity
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-diversity-components" title="β-diversity components" class="md-nav__link">
+    β-diversity components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-diversity-measures" title="β-diversity measures" class="md-nav__link">
+    β-diversity measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-operations-on-networks" title="Basic operations on networks" class="md-nav__link">
+    Basic operations on networks
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-diversity-components" title="β-diversity components" class="md-nav__link">
+    β-diversity components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-diversity-measures" title="β-diversity measures" class="md-nav__link">
+    β-diversity measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-operations-on-networks" title="Basic operations on networks" class="md-nav__link">
+    Basic operations on networks
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/properties/betadiversity.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <p><a id='Network-β-diversity-1'></a></p>
+<h1 id="network-diversity">Network β-diversity</h1>
+<p>Measures of β-diversity work by first calculating the unique/shared items (using the <code>βs</code>, <code>βos</code>, and <code>βwn</code> functions), then passing on these arguments to one of the <code>KGLXX</code> functions to return a (dis)similarity score. The <code>KGL</code> functions are named for Koleff, Gaston, and Lennon – the number of each function matches the number in Table 1.</p>
+<p><a id='β-diversity-components-1'></a></p>
+<h2 id="-diversity-components">β-diversity components</h2>
+<p>The package implements functions for the βs, βos, and βwn components of network dissimilarity. In the original publication, we also described βst, which was the proprotion of dissimilarity due to species turnover, and defined as βst = βwn - βos <em>for measures of dissimilarity bounded between 0 and 1</em>. After discussing with colleagues and considering our own use-cases, it appears that the interpretation of βst is not always straightforward, and so we have decided to exclude it form the available functions.</p>
+<p><a id='EcologicalNetwork.βs' href='#EcologicalNetwork.βs'>#</a>
+<strong><code>EcologicalNetwork.βs</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>βs(X::T, Y::T) where {T&lt;:BinaryNetwork}
+</code></pre>
+
+<p>Components of β-diversity as measured on species.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetwork.βos' href='#EcologicalNetwork.βos'>#</a>
+<strong><code>EcologicalNetwork.βos</code></strong> &mdash; <em>Function</em>.</p>
+<p>Overlapping species (bipartite)</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L14-L16' class='documenter-source'>source</a><br></p>
+<p>Overlapping species (unipartite)</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L28-L30' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetwork.βwn' href='#EcologicalNetwork.βwn'>#</a>
+<strong><code>EcologicalNetwork.βwn</code></strong> &mdash; <em>Function</em>.</p>
+<p>Whole network</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/partitions.jl#L42-L44' class='documenter-source'>source</a><br></p>
+<p>One measure which is possibly missing is a function to build the metaweb, <em>i.e.</em> aggregate all species and interactions in a collection of networks. This can be done using <code>union</code>, <em>e.g.</em></p>
+<pre><code class="julia">N = nz_stream_foodweb() # Or any collection of networks
+metaweb = reduce(union, N)
+</code></pre>
+
+<p><a id='β-diversity-measures-1'></a></p>
+<h2 id="-diversity-measures">β-diversity measures</h2>
+<p><a id='EcologicalNetwork.KGL01' href='#EcologicalNetwork.KGL01'>#</a>
+<strong><code>EcologicalNetwork.KGL01</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>KGL01(S::T)
+</code></pre>
+
+<p>Whittaker</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/measures.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a id='Basic-operations-on-networks-1'></a></p>
+<h2 id="basic-operations-on-networks">Basic operations on networks</h2>
+<p>Internally, the functions for β-diversity rely on the usual operations on sets. The act of combining two networks, for example, is a <code>union</code> operation.</p>
+<p><a id='Base.setdiff' href='#Base.setdiff'>#</a>
+<strong><code>Base.setdiff</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>setdiff(X::T, Y::T) where {T&lt;:BipartiteNetwork}
+</code></pre>
+
+<p>Difference between two bipartite networks. This operation is <em>sensitive</em> to the order of arguments, as the resulting network will have the species present in the first network (and their interactions) only.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L103-L109' class='documenter-source'>source</a><br></p>
+<pre><code>setdiff(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
+</code></pre>
+
+<p>Difference between two unipartite networks. This operation is <em>sensitive</em> to the order of arguments, as the resulting network will have the species present in the first network (and their interactions) only.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L116-L122' class='documenter-source'>source</a><br></p>
+<p><a id='Base.union' href='#Base.union'>#</a>
+<strong><code>Base.union</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>union(X::T, Y::T) where {T&lt;:BipartiteNetwork}
+</code></pre>
+
+<p>Union of two bipartite networks – interactions <em>and</em> species which are present in either networks are also present in the final network.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L5-L10' class='documenter-source'>source</a><br></p>
+<pre><code>union(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
+</code></pre>
+
+<p>Union of two unipartite networks – interactions <em>and</em> species which are present in either networks are also present in the final network.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L55-L60' class='documenter-source'>source</a><br></p>
+<p><a id='Base.intersect' href='#Base.intersect'>#</a>
+<strong><code>Base.intersect</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>intersect(X::T, Y::T) where {T&lt;:BipartiteNetwork}
+</code></pre>
+
+<p>Intersect between two bipartite networks. The resulting network has the <em>species and interactions</em> common to both networks. This can result in species being disconnected, if they are found in both networks but with no operations in common.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L33-L40' class='documenter-source'>source</a><br></p>
+<pre><code>intersect(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
+</code></pre>
+
+<p>Intersect between two unipartite networks. The resulting network has the <em>species and interactions</em> common to both networks. This can result in species being disconnected, if they are found in both networks but with no operations in common.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/betadiversity/operations.jl#L82-L89' class='documenter-source'>source</a><br></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../randomization/" title="Randomization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Randomization
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../assets/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Analysis of ecological networks">
+        <meta name="description" content="Analysis of ecological network data">
       
       
       
@@ -40,12 +40,18 @@
     
     
       
-        <title>Datasets - EcologicalNetwork.jl</title>
+        <title>Table of contents - EcologicalNetwork.jl</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/application.ba0fd1a6.css">
       
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -54,18 +60,20 @@
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:300,400,400i,700|Cousine">
+        <style>body,input{font-family:"Arimo","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cousine","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../assets/Documenters.css">
+      <link rel="stylesheet" href="../assets/Documenter.css">
     
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="amber">
   
     <svg class="md-svg">
       <defs>
@@ -96,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#datasets" tabindex="1" class="md-skip">
+      <a href="#table-of-contents" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +115,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href=".." title="EcologicalNetwork.jl" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">timeline</i>
           
         </a>
       </div>
@@ -122,7 +130,7 @@
                 EcologicalNetwork.jl
               </span>
               <span class="md-header-nav__topic">
-                Datasets
+                Table of contents
               </span>
             
           
@@ -203,7 +211,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">timeline</i>
       
     </span>
     EcologicalNetwork.jl
@@ -249,18 +257,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../types/" title="Different types of networks" class="md-nav__link">
-      Different types of networks
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -272,11 +268,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Datasets
+        Table of contents
       </label>
     
-    <a href="./" title="Datasets" class="md-nav__link md-nav__link--active">
-      Datasets
+    <a href="./" title="Table of contents" class="md-nav__link md-nav__link--active">
+      Table of contents
     </a>
     
       
@@ -290,22 +286,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unipartite-networks" title="Unipartite networks" class="md-nav__link">
-    Unipartite networks
+  <a href="#interface" title="Interface" class="md-nav__link">
+    Interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bipartite-networks" title="Bipartite networks" class="md-nav__link">
-    Bipartite networks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-collections" title="Network collections" class="md-nav__link">
-    Network collections
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
   </a>
   
 </li>
@@ -328,14 +317,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-4">
-      Use cases
+    <label class="md-nav__link" for="nav-3">
+      Interface
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Use cases
+      <label class="md-nav__title" for="nav-3">
+        Interface
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -346,8 +335,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../usecase/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
+    <a href="../interface/types/" title="Types" class="md-nav__link">
+      Types
     </a>
   </li>
 
@@ -358,7 +347,67 @@
 
 
   <li class="md-nav__item">
-    <a href="../usecase/modularity/" title="Modularity" class="md-nav__link">
+    <a href="../interface/conversions/" title="Type conversions" class="md-nav__link">
+      Type conversions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../interface/highlevel/" title="Core functions" class="md-nav__link">
+      Core functions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Network measures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Network measures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../properties/links/" title="Links" class="md-nav__link">
+      Links
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../properties/modularity/" title="Modularity" class="md-nav__link">
       Modularity
     </a>
   </li>
@@ -370,7 +419,19 @@
 
 
   <li class="md-nav__item">
-    <a href="../usecase/motifs/" title="Motifs" class="md-nav__link">
+    <a href="../properties/nestedness/" title="Nestedness" class="md-nav__link">
+      Nestedness
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../properties/motifs/" title="Motifs" class="md-nav__link">
       Motifs
     </a>
   </li>
@@ -382,44 +443,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../usecase/plot/" title="Plots" class="md-nav__link">
-      Plots
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Network structure
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Network structure
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../community/nlinks/" title="Linkage density and connectance" class="md-nav__link">
-      Linkage density and connectance
+    <a href="../properties/paths/" title="Centrality and paths" class="md-nav__link">
+      Centrality and paths
     </a>
   </li>
 
@@ -430,8 +455,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../community/degree/" title="Degree distribution" class="md-nav__link">
-      Degree distribution
+    <a href="../properties/randomization/" title="Randomization" class="md-nav__link">
+      Randomization
     </a>
   </li>
 
@@ -442,152 +467,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../community/motifs/" title="Interaction motifs" class="md-nav__link">
-      Interaction motifs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../community/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../community/modularity/" title="Modularity" class="md-nav__link">
-      Modularity
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Species-level measures
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Species-level measures
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../species/specificity/" title="Specificity" class="md-nav__link">
-      Specificity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../species/centrality/" title="Centrality" class="md-nav__link">
-      Centrality
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../species/foodweb/" title="Food-web specific" class="md-nav__link">
-      Food-web specific
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Hypothesis testing
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Hypothesis testing
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../nhst/nullmodels/" title="Probabilistic null models" class="md-nav__link">
-      Probabilistic null models
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../nhst/swaps/" title="Network permutations" class="md-nav__link">
-      Network permutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../nhst/nhst/" title="Null Hypothesis Significance Testing" class="md-nav__link">
-      Null Hypothesis Significance Testing
+    <a href="../properties/betadiversity/" title="β-diversity" class="md-nav__link">
+      β-diversity
     </a>
   </li>
 
@@ -618,22 +499,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unipartite-networks" title="Unipartite networks" class="md-nav__link">
-    Unipartite networks
+  <a href="#interface" title="Interface" class="md-nav__link">
+    Interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bipartite-networks" title="Bipartite networks" class="md-nav__link">
-    Bipartite networks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-collections" title="Network collections" class="md-nav__link">
-    Network collections
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
   </a>
   
 </li>
@@ -654,78 +528,110 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/data.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/toc.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p><a id='Datasets-1'></a></p>
-<h1 id="datasets">Datasets</h1>
-<p><code>EcologicalNetwork</code> comes with a few datasets.</p>
-<p><a id='Unipartite-networks-1'></a></p>
-<h2 id="unipartite-networks">Unipartite networks</h2>
-<p><a id='EcologicalNetwork.stony' href='#EcologicalNetwork.stony'>#</a>
-<strong><code>EcologicalNetwork.stony</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Stony food web</strong></p>
-<div class="codehilite"><pre><span></span>stony()
-</pre></div>
-
-
-<p>Stony food web from Thompson &amp; Townsend. This was sampled in a tussock grassland near Otago, New Zealand. Note that there is, in the original matrix, a species with no interactions. It is removed when generating the network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L16-L24' class='documenter-source'>source</a><br></p>
-<p><a id='Bipartite-networks-1'></a></p>
-<h2 id="bipartite-networks">Bipartite networks</h2>
-<p><a id='EcologicalNetwork.ollerton' href='#EcologicalNetwork.ollerton'>#</a>
-<strong><code>EcologicalNetwork.ollerton</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Fish-anemone interactions</strong></p>
-<p>From Ollerton et al. 2007</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L46-L50' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.mcmullen' href='#EcologicalNetwork.mcmullen'>#</a>
-<strong><code>EcologicalNetwork.mcmullen</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Plant-flower visitor interactions in the Galapagos</strong></p>
-<div class="codehilite"><pre><span></span>mcmullen()
-</pre></div>
-
-
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L35-L40' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.robertson' href='#EcologicalNetwork.robertson'>#</a>
-<strong><code>EcologicalNetwork.robertson</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Pollination interactions</strong></p>
-<p>From Robertson 1927, in an agricultural area dominated by crops, with some natural forest and pasture.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L56-L61' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.bluthgen' href='#EcologicalNetwork.bluthgen'>#</a>
-<strong><code>EcologicalNetwork.bluthgen</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Number of visits from Bluthgen et al XXX</strong></p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L67-L69' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.kato' href='#EcologicalNetwork.kato'>#</a>
-<strong><code>EcologicalNetwork.kato</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Kyoto University Forest of Ashu pollination network</strong></p>
-<div class="codehilite"><pre><span></span>kato()
-</pre></div>
-
-
-<p>Interaction strength is the mumber of plant visits by insects.</p>
-<p><a href="https://www.nceas.ucsb.edu/interactionweb/html/kato_1990.html">https://www.nceas.ucsb.edu/interactionweb/html/kato_1990.html</a></p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L1-L9' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.woods' href='#EcologicalNetwork.woods'>#</a>
-<strong><code>EcologicalNetwork.woods</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Lake of the Woods host-parasite data</strong></p>
-<p>Interactions content are prevalence.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L75-L79' class='documenter-source'>source</a><br></p>
-<p><a id='Network-collections-1'></a></p>
-<h2 id="network-collections">Network collections</h2>
-<p><a id='EcologicalNetwork.soilphagebacteria' href='#EcologicalNetwork.soilphagebacteria'>#</a>
-<strong><code>EcologicalNetwork.soilphagebacteria</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Soil-isolated phage-bacteria networks</strong></p>
-<div class="codehilite"><pre><span></span>soilphagebacteria(i::Int64=1)
-</pre></div>
-
-
-<p>Interactions are the impact of phage on the bacteria.</p>
-<p><a href="https://figshare.com/articles/Phage_bacteria_networks_isolated_in_soil/696102">https://figshare.com/articles/Phage_bacteria_networks_isolated_in_soil/696102</a></p>
-<p>Takes a positional argument <code>i</code>, indicating which network (from 1 to 5) to return.</p>
-<blockquote>
-<p>Poisot, T., Lounnas, M., Hochberg, M.E., 2013. The structure of natural microbial enemy-victim networks. Ecological Processes 2, 1. doi:10.1186/2192-1709-2-13</p>
-</blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/data.jl#L86-L103' class='documenter-source'>source</a><br></p>
+                <p><a id='Table-of-contents-1'></a></p>
+<h1 id="table-of-contents">Table of contents</h1>
+<ul>
+<li><a href="..#EcologicalNetwork-1">EcologicalNetwork</a><ul>
+<li><a href="..#Package-philosophy-1">Package philosophy</a></li>
+<li><a href="..#Why-should-I-use-this-package?-1">Why should I use this package?</a><ul>
+<li><a href="..#But-it-doesn't-even-make-figures!-1">But it doesn't even make figures!</a></li>
+<li><a href="..#And-it-doesn't-even-generate-random-networks!-1">And it doesn't even generate random networks!</a></li>
+<li><a href="..#And-worse,-you-forgot-my-favorite-method!-1">And worse, you forgot my favorite method!</a></li>
+</ul>
+</li>
+<li><a href="..#References-1">References</a><ul>
+<li><a href="..#Network-β-diversity-1">Network β-diversity</a></li>
+<li><a href="..#Specificity-1">Specificity</a></li>
+<li><a href="..#Probabilistic-networks-1">Probabilistic networks</a></li>
+</ul>
+</li>
+<li><a href="..#How-can-I-contribute?-1">How can I contribute?</a></li>
+</ul>
+</li>
+</ul>
+<p><a id='Interface-1'></a></p>
+<h2 id="interface">Interface</h2>
+<ul>
+<li><a href="../interface/types/#Types-of-networks-1">Types of networks</a><ul>
+<li><a href="../interface/types/#Network-representation-1">Network representation</a><ul>
+<li><a href="../interface/types/#Partiteness-1">Partiteness</a></li>
+<li><a href="../interface/types/#Type-of-information-1">Type of information</a></li>
+</ul>
+</li>
+<li><a href="../interface/types/#Union-types-1">Union types</a><ul>
+<li><a href="../interface/types/#By-partiteness-1">By partiteness</a></li>
+<li><a href="../interface/types/#By-interaction-type-1">By interaction type</a></li>
+</ul>
+</li>
+<li><a href="../interface/types/#List-of-available-types-1">List of available types</a></li>
+</ul>
+</li>
+<li><a href="../interface/conversions/#Conversions-1">Conversions</a></li>
+<li><a href="../interface/highlevel/#Core-functions-1">Core functions</a><ul>
+<li><a href="../interface/highlevel/#Accessing-species-1">Accessing species</a></li>
+<li><a href="../interface/highlevel/#Accessing-interactions-1">Accessing interactions</a><ul>
+<li><a href="../interface/highlevel/#Presence-of-an-interaction-1">Presence of an interaction</a></li>
+<li><a href="../interface/highlevel/#Network-slices-1">Network slices</a></li>
+<li><a href="../interface/highlevel/#Random-network-samples-1">Random network samples</a></li>
+</ul>
+</li>
+<li><a href="../interface/highlevel/#Network-utilities-1">Network utilities</a><ul>
+<li><a href="../interface/highlevel/#Network-size-1">Network size</a></li>
+<li><a href="../interface/highlevel/#Species-richness-1">Species richness</a></li>
+<li><a href="../interface/highlevel/#Changing-network-shape-1">Changing network shape</a></li>
+<li><a href="../interface/highlevel/#Invert-interactions-1">Invert interactions</a></li>
+<li><a href="../interface/highlevel/#Modify-interactions-1">Modify interactions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a id='Properties-1'></a></p>
+<h2 id="properties">Properties</h2>
+<ul>
+<li><a href="../properties/links/#Links,-degree,-connectance-1">Links, degree, connectance</a><ul>
+<li><a href="../properties/links/#Connectance-and-number-of-links-1">Connectance and number of links</a></li>
+<li><a href="../properties/links/#Degree-1">Degree</a></li>
+<li><a href="../properties/links/#Species-without-interactions-1">Species without interactions</a></li>
+<li><a href="../properties/links/#Species-level-specificity-1">Species-level specificity</a></li>
+</ul>
+</li>
+<li><a href="../properties/modularity/#Modularity-1">Modularity</a><ul>
+<li><a href="../properties/modularity/#Example-1">Example</a></li>
+<li><a href="../properties/modularity/#Measures-1">Measures</a></li>
+<li><a href="../properties/modularity/#Starters-1">Starters</a></li>
+<li><a href="../properties/modularity/#Optimizers-1">Optimizers</a></li>
+</ul>
+</li>
+<li><a href="../properties/nestedness/#Nestedness-1">Nestedness</a></li>
+<li><a href="../properties/motifs/#Motif-enumeration-1">Motif enumeration</a><ul>
+<li><a href="../properties/motifs/#Example-1">Example</a></li>
+<li><a href="../properties/motifs/#List-of-canonical-motifs-1">List of canonical motifs</a></li>
+<li><a href="../properties/motifs/#Motif-counting-1">Motif counting</a></li>
+<li><a href="../properties/motifs/#Probabilistic-case-1">Probabilistic case</a></li>
+</ul>
+</li>
+<li><a href="../properties/paths/#Paths-and-centrality-1">Paths and centrality</a><ul>
+<li><a href="../properties/paths/#Number-of-paths-and-shortest-path-1">Number of paths and shortest path</a></li>
+<li><a href="../properties/paths/#Centrality-measures-1">Centrality measures</a></li>
+</ul>
+</li>
+<li><a href="../properties/randomization/#Randomization-of-networks-1">Randomization of networks</a><ul>
+<li><a href="../properties/randomization/#Draw-a-network-from-a-probabilistic-network-1">Draw a network from a probabilistic network</a></li>
+<li><a href="../properties/randomization/#Generate-probabilistic-networks-from-deterministic-networks-1">Generate probabilistic networks from deterministic networks</a></li>
+<li><a href="../properties/randomization/#Shuffle-interactions-1">Shuffle interactions</a></li>
+</ul>
+</li>
+<li><a href="../properties/betadiversity/#Network-β-diversity-1">Network β-diversity</a><ul>
+<li><a href="../properties/betadiversity/#β-diversity-components-1">β-diversity components</a></li>
+<li><a href="../properties/betadiversity/#β-diversity-measures-1">β-diversity measures</a></li>
+<li><a href="../properties/betadiversity/#Basic-operations-on-networks-1">Basic operations on networks</a></li>
+</ul>
+</li>
+</ul>
                 
                   
                 
@@ -746,7 +652,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../types/" title="Different types of networks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -755,19 +661,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Different types of networks
+                Home
               </span>
             </div>
           </a>
         
         
-          <a href="../usecase/nestedness/" title="Nestedness" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../interface/types/" title="Types" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Nestedness
+                Types
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -801,7 +707,7 @@
       
       <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../assets/mathjaxhelper.js"></script>
       

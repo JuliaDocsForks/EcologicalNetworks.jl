@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Analysis of ecological networks">
+        <meta name="description" content="Analysis of ecological network data">
       
       
       
@@ -40,12 +40,18 @@
     
     
       
-        <title>Centrality - EcologicalNetwork.jl</title>
+        <title>Modularity - EcologicalNetwork.jl</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -54,18 +60,20 @@
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:300,400,400i,700|Cousine">
+        <style>body,input{font-family:"Arimo","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cousine","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../assets/Documenters.css">
+      <link rel="stylesheet" href="../../assets/Documenter.css">
     
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="amber">
   
     <svg class="md-svg">
       <defs>
@@ -96,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#centrality" tabindex="1" class="md-skip">
+      <a href="#modularity" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +115,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="EcologicalNetwork.jl" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">timeline</i>
           
         </a>
       </div>
@@ -122,7 +130,7 @@
                 EcologicalNetwork.jl
               </span>
               <span class="md-header-nav__topic">
-                Centrality
+                Modularity
               </span>
             
           
@@ -203,7 +211,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">timeline</i>
       
     </span>
     EcologicalNetwork.jl
@@ -251,20 +259,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../types/" title="Different types of networks" class="md-nav__link">
-      Different types of networks
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../data/" title="Datasets" class="md-nav__link">
-      Datasets
+    <a href="../../toc/" title="Table of contents" class="md-nav__link">
+      Table of contents
     </a>
   </li>
 
@@ -276,14 +272,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-4">
-      Use cases
+    <label class="md-nav__link" for="nav-3">
+      Interface
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Use cases
+      <label class="md-nav__title" for="nav-3">
+        Interface
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -294,8 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
+    <a href="../../interface/types/" title="Types" class="md-nav__link">
+      Types
     </a>
   </li>
 
@@ -306,8 +302,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/modularity/" title="Modularity" class="md-nav__link">
-      Modularity
+    <a href="../../interface/conversions/" title="Type conversions" class="md-nav__link">
+      Type conversions
     </a>
   </li>
 
@@ -318,104 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/motifs/" title="Motifs" class="md-nav__link">
-      Motifs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../usecase/plot/" title="Plots" class="md-nav__link">
-      Plots
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Network structure
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Network structure
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../community/nlinks/" title="Linkage density and connectance" class="md-nav__link">
-      Linkage density and connectance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../community/degree/" title="Degree distribution" class="md-nav__link">
-      Degree distribution
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../community/motifs/" title="Interaction motifs" class="md-nav__link">
-      Interaction motifs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../community/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../community/modularity/" title="Modularity" class="md-nav__link">
-      Modularity
+    <a href="../../interface/highlevel/" title="Core functions" class="md-nav__link">
+      Core functions
     </a>
   </li>
 
@@ -434,14 +334,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-6">
-      Species-level measures
+    <label class="md-nav__link" for="nav-4">
+      Network measures
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Species-level measures
+      <label class="md-nav__title" for="nav-4">
+        Network measures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -452,8 +352,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../specificity/" title="Specificity" class="md-nav__link">
-      Specificity
+    <a href="../links/" title="Links" class="md-nav__link">
+      Links
     </a>
   </li>
 
@@ -472,48 +372,62 @@
       
     
     
-    <a href="./" title="Centrality" class="md-nav__link md-nav__link--active">
-      Centrality
-    </a>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../foodweb/" title="Food-web specific" class="md-nav__link">
-      Food-web specific
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Hypothesis testing
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Hypothesis testing
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Modularity
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
+    
+    <a href="./" title="Modularity" class="md-nav__link md-nav__link--active">
+      Modularity
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measures" title="Measures" class="md-nav__link">
+    Measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starters" title="Starters" class="md-nav__link">
+    Starters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizers" title="Optimizers" class="md-nav__link">
+    Optimizers
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
         
           
           
@@ -521,8 +435,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../nhst/nullmodels/" title="Probabilistic null models" class="md-nav__link">
-      Probabilistic null models
+    <a href="../nestedness/" title="Nestedness" class="md-nav__link">
+      Nestedness
     </a>
   </li>
 
@@ -533,8 +447,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../nhst/swaps/" title="Network permutations" class="md-nav__link">
-      Network permutations
+    <a href="../motifs/" title="Motifs" class="md-nav__link">
+      Motifs
     </a>
   </li>
 
@@ -545,8 +459,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../../nhst/nhst/" title="Null Hypothesis Significance Testing" class="md-nav__link">
-      Null Hypothesis Significance Testing
+    <a href="../paths/" title="Centrality and paths" class="md-nav__link">
+      Centrality and paths
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../randomization/" title="Randomization" class="md-nav__link">
+      Randomization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../betadiversity/" title="β-diversity" class="md-nav__link">
+      β-diversity
     </a>
   </li>
 
@@ -573,6 +511,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measures" title="Measures" class="md-nav__link">
+    Measures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starters" title="Starters" class="md-nav__link">
+    Starters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizers" title="Optimizers" class="md-nav__link">
+    Optimizers
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -583,60 +558,81 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/species/centrality.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/properties/modularity.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p><a id='Centrality-1'></a></p>
-<h1 id="centrality">Centrality</h1>
-<p><a id='EcologicalNetwork.centrality_katz' href='#EcologicalNetwork.centrality_katz'>#</a>
-<strong><code>EcologicalNetwork.centrality_katz</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Katz's centrality</strong></p>
-<div class="codehilite"><pre><span></span><span class="nt">centrality_katz</span><span class="o">(</span><span class="nt">N</span><span class="p">::</span><span class="nd">Unipartite</span><span class="o">;</span> <span class="nt">a</span><span class="p">::</span><span class="nd">Float64</span><span class="o">=</span><span class="nt">0</span><span class="p">.</span><span class="nc">1</span><span class="o">,</span> <span class="nt">k</span><span class="p">::</span><span class="nd">Int64</span><span class="o">=</span><span class="nt">5</span><span class="o">)</span>
-</pre></div>
+                <p><a id='Modularity-1'></a></p>
+<h1 id="modularity">Modularity</h1>
+<p>The analysis of network modularity is done in three steps:</p>
+<ol>
+<li>generate a starting point, using one of the starter functions</li>
+<li>optimize modularity</li>
+<li>analyse the output</li>
+</ol>
+<p>All starter functions take a network as input, and return a tuple of this network and a dictionary where every species maps onto its module. This forms the input of all other modularity related functions.</p>
+<p><a id='Example-1'></a></p>
+<h2 id="example">Example</h2>
+<pre><code class="julia">N = convert(BinaryNetwork, web_of_life(&quot;A_HP_001&quot;))
+N |&gt; lp |&gt; x -&gt; brim(x...) |&gt; x -&gt; Q(x...)
+</code></pre>
 
+<pre><code>0.27143241064230045
+</code></pre>
 
-<p>This measure can work on different path length (<code>k</code>), and give a different weight to every subsequent connection (<code>a</code>). <code>k</code> must be at least 1 (only immediate neighbors are considered). <code>a</code> (being a weight), must be positive.</p>
-<div class="codehilite"><pre><span></span>julia&gt; N = UnipartiteNetwork(eye(5));
+<p><a id='Measures-1'></a></p>
+<h2 id="measures">Measures</h2>
+<pre><code>Q
+Qr
+</code></pre>
 
-julia&gt; centrality_katz(N)
-5×1 Array{Float64,2}:
- 0.2
- 0.2
- 0.2
- 0.2
- 0.2
-</pre></div>
+<p><a id='Starters-1'></a></p>
+<h2 id="starters">Starters</h2>
+<p><a id='EcologicalNetwork.n_random_modules' href='#EcologicalNetwork.n_random_modules'>#</a>
+<strong><code>EcologicalNetwork.n_random_modules</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>n_random_modules(n::Int64)
+</code></pre>
 
+<p>This returns <em>a function</em> which, when applied to a network, will randomly assign every species to one of <code>n</code> modules. The correct way to apply this function to a network <code>N</code> is, therefore <code>n_random_modules(4)(N)</code> (with four modules).</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/starters.jl#L1-L7' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetwork.each_species_its_module' href='#EcologicalNetwork.each_species_its_module'>#</a>
+<strong><code>EcologicalNetwork.each_species_its_module</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>each_species_its_module(N::T) where {T&lt;:AbstractEcologicalNetwork}
+</code></pre>
 
-<blockquote>
-<p>Katz, L., 1953. A new status index derived from sociometric analysis. Psychometrika 18, 39–43. doi:10.1007/bf02289026</p>
-</blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/centrality.jl#L1-L25' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.centrality_degree' href='#EcologicalNetwork.centrality_degree'>#</a>
-<strong><code>EcologicalNetwork.centrality_degree</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Degree centrality</strong></p>
-<div class="codehilite"><pre><span></span>centrality_degree(N::UnipartiteNetwork)
-</pre></div>
+<p>Returns a dictionary in which each species is its own module. This is used as a starting point for <code>lp</code> and <code>salp</code> internally. This is often a very poor starting point for <code>brim</code>, and should probably not be used on its own.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/starters.jl#L14-L20' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetwork.lp' href='#EcologicalNetwork.lp'>#</a>
+<strong><code>EcologicalNetwork.lp</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>lp(N::T) where {T&lt;:AbstractEcologicalNetwork}
+</code></pre>
 
+<p>Uses label propagation to generate a first approximation of the modular structure of a network. This is usually followed by the BRIM (<code>brim</code>) method. This method supposedly performs better for large graphs, but we rarely observed any differences between it and variations of BRIM alone on smaller graphs.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/labelpropagation.jl#L1-L8' class='documenter-source'>source</a><br></p>
+<p><a id='Optimizers-1'></a></p>
+<h2 id="optimizers">Optimizers</h2>
+<p><a id='EcologicalNetwork.brim' href='#EcologicalNetwork.brim'>#</a>
+<strong><code>EcologicalNetwork.brim</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>brim(N::NT, L::Dict{E,Int64}) where {NT&lt;:AbstractEcologicalNetwork,E&lt;:AllowedSpeciesTypes}
+</code></pre>
 
-<p>Degree centrality, corrected by the maximum degree (the most central species has a degree of 1).</p>
-<p>$C_{d}(i) = k_i / \text{max}(\mathbf{k})$</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/centrality.jl#L66-L76' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.centrality_closeness' href='#EcologicalNetwork.centrality_closeness'>#</a>
-<strong><code>EcologicalNetwork.centrality_closeness</code></strong> &mdash; <em>Function</em>.</p>
-<p><strong>Closeness centrality</strong></p>
-<div class="codehilite"><pre><span></span><span class="nt">centrality_closeness</span><span class="o">(</span><span class="nt">N</span><span class="p">::</span><span class="nd">UnipartiteNetwork</span><span class="o">;</span> <span class="nt">nmax</span><span class="p">::</span><span class="nd">Int64</span><span class="o">=</span><span class="nt">100</span><span class="o">)</span>
-</pre></div>
+<p>Uses BRIM to optimize the modularity of an ecological network. The <code>L</code> argument is a dictionary mapping every species in the network to its module. This function returns a tuple of the network and its module assignment.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/brim.jl#L1-L7' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetwork.salp' href='#EcologicalNetwork.salp'>#</a>
+<strong><code>EcologicalNetwork.salp</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>salp(N::T; θ::Float64=1.0, steps::Int64=10_000, λ::Float64=0.999, progress::Bool=false) where {T &lt;: BipartiteNetwork}
+</code></pre>
 
-
-<p>Closeness centrality is defined as:</p>
-<p>$C_{c}(i) = \sum_j \left( \frac{n-1}{d_{ji}} \right)$</p>
-<p>where $mathbf{d}$ is a matrix containing the lengths of the shortest paths between all pairs of species, and $n$ is the number of species.</p>
-<p>The function calls <code>shortest_path</code> internally – the <code>nmax</code> argument is the maximal path length that wil be tried.</p>
-<blockquote>
-<p>Bavelas, A., 1950. Communication Patterns in Task‐Oriented Groups. The Journal of the Acoustical Society of America 22, 725–730. doi:10.1121/1.1906679</p>
-</blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/f56769bdc40f882863ba7e104c8265b5f6e28ceb/src/centrality.jl#L34-L52' class='documenter-source'>source</a><br></p>
+<p>Label-propagation using simulated annealing. This function uses simulated annealing to propagate labels from neighboring nodes. It accepts a network as input. The schedule of the simulated annealing is linear: at step k+1, the temperature is θλᵏ. The initial temperature has been picked so that after 100 timesteps, using the default λ, a move decreasing modularity by 0.05 (20% of the theoretical maximum) is picked with a probability of 0.1.</p>
+<p>Optional arguments regulating the behavior of the simulated annealing routine are:</p>
+<ul>
+<li><code>λ=0.999</code>, the rate of temperature decay</li>
+<li><code>θ=0.002</code>, the initial temperature</li>
+<li><code>steps=10_000</code>, the number of annealing steps to perform</li>
+<li><code>progress=false</code>, whether to display an info message every 100 timesteps</li>
+</ul>
+<p>The θ parameter can be picked using the following method: if we want to allow a maximal loss of modularity of δ, after timestep k, with a decay parameter λ, with a probability P, then θ = -δ/[λᵏ×ln(P)]⁻¹. By beibg more or less restrictive on these parameters, the user can pick a value of θ for every problem.</p>
+<p>This function can work as a first step (like <code>lp</code>), but in explorations during the development of the package, we found that <code>brim</code> was rarely (if ever) able to optmize the output further. It can therefore be used on its own.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/dd532b683c3544ea3240a2cd7ad2bed8214a6fa3/src/modularity/labelpropagation.jl#L59-L86' class='documenter-source'>source</a><br></p>
                 
                   
                 
@@ -657,7 +653,7 @@ julia&gt; centrality_katz(N)
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../specificity/" title="Specificity" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../links/" title="Links" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -666,19 +662,19 @@ julia&gt; centrality_katz(N)
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Specificity
+                Links
               </span>
             </div>
           </a>
         
         
-          <a href="../foodweb/" title="Food-web specific" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../nestedness/" title="Nestedness" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Food-web specific
+                Nestedness
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -712,7 +708,7 @@ julia&gt; centrality_katz(N)
       
       <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
       
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../assets/mathjaxhelper.js"></script>
       
