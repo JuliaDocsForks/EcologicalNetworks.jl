@@ -1,739 +1,189 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-        <meta name="description" content="Analysis of ecological network data">
-      
-      
-      
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <meta name="author" content="Timothée Poisot">
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
-    
-    
-      
-        <title>Core functions - EcologicalNetwork.jl</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
-      
-      
         
-        
-        <meta name="theme-color" content="#009688">
-      
-    
-    
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-      
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:300,400,400i,700|Cousine">
-        <style>body,input{font-family:"Arimo","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cousine","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
-    
-      <link rel="stylesheet" href="../../assets/Documenter.css">
-    
-    
-  </head>
-  
-    
-    
-    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="amber">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#core-functions" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="EcologicalNetwork.jl" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon">timeline</i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                EcologicalNetwork.jl
-              </span>
-              <span class="md-header-nav__topic">
-                Core functions
-              </span>
-            
-          
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Core functions - EcologicalNetworks.jl</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../assets/Documenter.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">EcologicalNetworks.jl</a>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li >
+                        <a href="../../toc/">Table of contents</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Interface <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../types/">Types</a>
+</li>
+                            
+<li >
+    <a href="../conversions/">Type conversions</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Core functions</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Network measures <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../properties/links/">Links</a>
+</li>
+                            
+<li >
+    <a href="../../properties/modularity/">Modularity</a>
+</li>
+                            
+<li >
+    <a href="../../properties/nestedness/">Nestedness</a>
+</li>
+                            
+<li >
+    <a href="../../properties/motifs/">Motifs</a>
+</li>
+                            
+<li >
+    <a href="../../properties/paths/">Centrality and paths</a>
+</li>
+                            
+<li >
+    <a href="../../properties/overlap/">Overlap and complementarity</a>
+</li>
+                            
+<li >
+    <a href="../../properties/randomization/">Randomization</a>
+</li>
+                            
+<li >
+    <a href="../../properties/betadiversity/">β-diversity</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../conversions/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../properties/links/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/interface/highlevel.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
         </div>
-      </div>
     </div>
-  </div>
 </div>
-          
-        
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
 
-
-  
-
-
-  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <span class="md-nav__button md-logo">
-      
-        <i class="md-icon">timeline</i>
-      
-    </span>
-    EcologicalNetwork.jl
-  </label>
-  
-    <div class="md-nav__source">
-      
-
-
-  
-
-
-  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
-    </div>
-  </a>
-
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../toc/" title="Table of contents" class="md-nav__link">
-      Table of contents
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Interface
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Interface
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../types/" title="Types" class="md-nav__link">
-      Types
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../conversions/" title="Type conversions" class="md-nav__link">
-      Type conversions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Core functions
-      </label>
-    
-    <a href="./" title="Core functions" class="md-nav__link md-nav__link--active">
-      Core functions
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-species" title="Accessing species" class="md-nav__link">
-    Accessing species
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-interactions" title="Accessing interactions" class="md-nav__link">
-    Accessing interactions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#presence-of-an-interaction" title="Presence of an interaction" class="md-nav__link">
-    Presence of an interaction
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-slices" title="Network slices" class="md-nav__link">
-    Network slices
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#random-network-samples" title="Random network samples" class="md-nav__link">
-    Random network samples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-utilities" title="Network utilities" class="md-nav__link">
-    Network utilities
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#network-size" title="Network size" class="md-nav__link">
-    Network size
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#species-richness" title="Species richness" class="md-nav__link">
-    Species richness
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#changing-network-shape" title="Changing network shape" class="md-nav__link">
-    Changing network shape
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#invert-interactions" title="Invert interactions" class="md-nav__link">
-    Invert interactions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify-interactions" title="Modify interactions" class="md-nav__link">
-    Modify interactions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#core-functions">Core functions</a></li>
+            <li><a href="#accessing-species">Accessing species</a></li>
+            <li><a href="#accessing-interactions">Accessing interactions</a></li>
+            <li><a href="#network-utilities">Network utilities</a></li>
     </ul>
-  
-</nav>
-    
-  </li>
+</div></div>
+                <div class="col-md-9" role="main">
 
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Network measures
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Network measures
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../properties/links/" title="Links" class="md-nav__link">
-      Links
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../properties/modularity/" title="Modularity" class="md-nav__link">
-      Modularity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../properties/nestedness/" title="Nestedness" class="md-nav__link">
-      Nestedness
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../properties/motifs/" title="Motifs" class="md-nav__link">
-      Motifs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../properties/paths/" title="Centrality and paths" class="md-nav__link">
-      Centrality and paths
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../properties/randomization/" title="Randomization" class="md-nav__link">
-      Randomization
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../properties/betadiversity/" title="β-diversity" class="md-nav__link">
-      β-diversity
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-species" title="Accessing species" class="md-nav__link">
-    Accessing species
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-interactions" title="Accessing interactions" class="md-nav__link">
-    Accessing interactions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#presence-of-an-interaction" title="Presence of an interaction" class="md-nav__link">
-    Presence of an interaction
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-slices" title="Network slices" class="md-nav__link">
-    Network slices
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#random-network-samples" title="Random network samples" class="md-nav__link">
-    Random network samples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-utilities" title="Network utilities" class="md-nav__link">
-    Network utilities
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#network-size" title="Network size" class="md-nav__link">
-    Network size
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#species-richness" title="Species richness" class="md-nav__link">
-    Species richness
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#changing-network-shape" title="Changing network shape" class="md-nav__link">
-    Changing network shape
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#invert-interactions" title="Invert interactions" class="md-nav__link">
-    Invert interactions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify-interactions" title="Modify interactions" class="md-nav__link">
-    Modify interactions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/PoisotLab/EcologicalNetwork.jl/edit/master/docs/interface/highlevel.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                <p><a id='Core-functions-1'></a></p>
+<p><a id='Core-functions-1'></a></p>
 <h1 id="core-functions">Core functions</h1>
-<p>This page presents the core functions to manipulate networks. Whenever possible, the approach of <code>EcologicalNetwork</code> is to overload functions from <code>Base</code>.</p>
+<p>This page presents the core functions to manipulate networks. Whenever possible, the approach of <code>EcologicalNetworks</code> is to overload functions from <code>Base</code>.</p>
 <p><a id='Accessing-species-1'></a></p>
 <h2 id="accessing-species">Accessing species</h2>
-<p><a id='EcologicalNetwork.species' href='#EcologicalNetwork.species'>#</a>
-<strong><code>EcologicalNetwork.species</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>species(N::AbstractUnipartiteNetwork)
-</code></pre>
-
-<p>Returns an array of all species in a unipartite network. The order of the species corresponds to the order of rows/columns in the adjacency matrix.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L15-L20' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetworks.species' href='#EcologicalNetworks.species'>#</a>
+<strong><code>EcologicalNetworks.species</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>species(N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Returns an array of all species in a bipartite network. The order of the species corresponds to the order of rows (top level) and columns (bottom level) of the adjacency matrix, in this order.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L26-L32' class='documenter-source'>source</a><br></p>
-<pre><code>species(N::AbstractBipartiteNetwork, i::Int64)
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L25-L31' class='documenter-source'>source</a><br></p>
+<pre><code>species(N::AbstractUnipartiteNetwork; dims::Int64=1)
 </code></pre>
 
-<p>Returns an array of species in either side of a bipartite network. The <code>i</code> parameter is the "margin" of the network, where <code>1</code> is species from the top, and <code>2</code> is species from the bottom layer.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L38-L44' class='documenter-source'>source</a><br></p>
-<pre><code>species(N::AbstractUnipartiteNetwork, i::Int64)
-</code></pre>
-
-<p>Returns an array of species on either side of a unipartite network. In a unipartite network, species are the same on either size, so this essentially calls <code>species(N)</code>. This function is nevertheless useful when you want to write code that takes either side of the network in a general way.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L52-L59' class='documenter-source'>source</a><br></p>
+<p>Returns an array of species on either side of a unipartite network. In a unipartite network, species are the same on either size. This function is nevertheless useful when you want to write code that takes either side of the network in a general way.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L39-L46' class='documenter-source'>source</a><br></p>
 <p><a id='Accessing-interactions-1'></a></p>
 <h2 id="accessing-interactions">Accessing interactions</h2>
 <p><a id='Presence-of-an-interaction-1'></a></p>
 <h3 id="presence-of-an-interaction">Presence of an interaction</h3>
-<p><a id='EcologicalNetwork.has_interaction' href='#EcologicalNetwork.has_interaction'>#</a>
-<strong><code>EcologicalNetwork.has_interaction</code></strong> &mdash; <em>Function</em>.</p>
+<p><a id='EcologicalNetworks.has_interaction' href='#EcologicalNetworks.has_interaction'>#</a>
+<strong><code>EcologicalNetworks.has_interaction</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>has_interaction(N::AbstractEcologicalNetwork, i::Int64, j::Int64)
 </code></pre>
 
 <p>This function returns <code>true</code> if the interaction between <code>i</code> and <code>j</code> is not 0. This refers to species by their position instead of their name, and is not recommended as the main solution. This is used internally by a few functions, but is exported because it may be of general use.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L72-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L59-L66' class='documenter-source'>source</a><br></p>
 <pre><code>has_interaction{NT&lt;:AllowedSpeciesTypes}(N::AbstractEcologicalNetwork, i::NT, j::NT)
 </code></pre>
 
 <p>This function returns <code>true</code> if the interaction between <code>i</code> and <code>j</code> is not 0. This refers to species by their names/values, and is the recommended way to test for the presence of an interaction.</p>
 <p>Use <code>N[i,j]</code> if you need to get the value of the interaction.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L89-L97' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.interactions' href='#EcologicalNetwork.interactions'>#</a>
-<strong><code>EcologicalNetwork.interactions</code></strong> &mdash; <em>Function</em>.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L76-L84' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetworks.interactions' href='#EcologicalNetworks.interactions'>#</a>
+<strong><code>EcologicalNetworks.interactions</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>interactions(N::AbstractEcologicalNetwork)
 </code></pre>
 
 <p>Returns the interactions in the ecological network. Interactions are returned as an array of named tuples. <em>A minima</em>, these have fields <code>from</code> and <code>to</code>. For networks that are probabilistic, there is a <code>probability</code> field. For networks that are quantitative, there is a <code>strength</code> field. This functions allows to iterate over interactions in a network in a convenient way.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L409-L417' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L328-L336' class='documenter-source'>source</a><br></p>
 <p><a id='Network-slices-1'></a></p>
 <h3 id="network-slices">Network slices</h3>
 <p><a id='Base.getindex' href='#Base.getindex'>#</a>
@@ -742,43 +192,43 @@
 </code></pre>
 
 <p>Uses positions to get an index from a network position. It is recommended <em>not</em> to use this function, and instead use the variants of <code>getindex</code> working with species names directly.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L172-L178' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L159-L165' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractEcologicalNetwork, s1::T, s2::T)
 </code></pre>
 
 <p>Get the value of an interaction based on the <em>name</em> of the species. This is the recommended way to look for things in a network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L184-L189' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L171-L176' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, ::Colon, sp::T)
 </code></pre>
 
 <p>Gets the predecessors (<em>i.e.</em> species that interacts with / consume) of a focal species. This returns the list of species as a <code>Set</code> object, in which ordering is unimportant.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L199-L205' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L186-L192' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractEcologicalNetwork, sp::T, ::Colon)
 </code></pre>
 
 <p>Gets the successors (<em>i.e.</em> species that are interacted with / consumed) of a focal species. This returns the list of species as a <code>Set</code> object, in which ordering is unimportant.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L212-L218' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L199-L205' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractUnipartiteNetwork, sp::Array{T})
 </code></pre>
 
 <p>Induce a unipartite network based on a list of species, all of which must be in the original network. This function takes a single argument (as opposed to two arrays, or an array and a colon) to ensure that the returned network is unipartite.</p>
 <p>The network which is returned by this function may not have the species in the order specified by the user for performance reasons.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L225-L235' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L212-L222' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, ::Colon, sp::Array{T})
 </code></pre>
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L245-L249' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L232-L236' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, sp::Array{T}, ::Colon)
 </code></pre>
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L260-L264' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L247-L251' class='documenter-source'>source</a><br></p>
 <pre><code>getindex{T&lt;:AllowedSpeciesTypes}(N::AbstractBipartiteNetwork, sp1::Array{T}, sp2::Array{T})
 </code></pre>
 
 <p>TODO</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L275-L279' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L262-L266' class='documenter-source'>source</a><br></p>
 <p><a id='Random-network-samples-1'></a></p>
 <h3 id="random-network-samples">Random network samples</h3>
 <p><a id='StatsBase.sample' href='#StatsBase.sample'>#</a>
@@ -787,33 +237,33 @@
 </code></pre>
 
 <p>Samples a sub-network from a unipartite network. <code>n</code> is the number of species to have in the sampled network. This functions makes <em>no</em> attempt to ensure that the network is not degenerate, or even has a single interaction. This is the recommended way to sample a unipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L3-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/rand/sample.jl#L3-L10' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64}) where {T&lt;:AbstractUnipartiteNetwork}
 </code></pre>
 
 <p>Same as <code>sample</code>, but work when called with <code>(n,)</code> instead of a species number. This is an accepted way to sample a unipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L17-L22' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/rand/sample.jl#L17-L22' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64,Int64}) where {T&lt;:AbstractUnipartiteNetwork}
 </code></pre>
 
 <p>Same as <code>sample</code> but called with <code>(n,n)</code> instead of a species number. Note that this will fail if the size requested is not square. This is not a really good way to sample a unipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L27-L33' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/rand/sample.jl#L27-L33' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64}) where {T&lt;:AbstractBipartiteNetwork}
 </code></pre>
 
 <p>Same as <code>sample</code> but with a single species number given as <code>(n,)</code>, to return a bipartite network of equal richness on both sides. This is not a very good way to sample a bipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L39-L45' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/rand/sample.jl#L39-L45' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Int64) where {T&lt;:AbstractBipartiteNetwork}
 </code></pre>
 
 <p>Same thing as <code>sample</code> but with a single species number, to return a bipartite network of equal richness on both sides. This is not a very good way to sample a bipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L52-L58' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/rand/sample.jl#L52-L58' class='documenter-source'>source</a><br></p>
 <pre><code>sample(N::T, n::Tuple{Int64,Int64}) where {T&lt;:AbstractBipartiteNetwork}
 </code></pre>
 
 <p>Samples a sub-network from a bipartite network. <code>n</code> is the size of the network to return, <em>i.e.</em> number of top and bottom species. This functions makes <em>no</em> attempt to ensure that the network is not degenerate, or even has a single interaction.</p>
 <p>This is the recommended way to sample a bipartite network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/rand/sample.jl#L65-L74' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/rand/sample.jl#L65-L74' class='documenter-source'>source</a><br></p>
 <p><a id='Network-utilities-1'></a></p>
 <h2 id="network-utilities">Network utilities</h2>
 <p><a id='Network-size-1'></a></p>
@@ -824,54 +274,49 @@
 </code></pre>
 
 <p>Return the size of the adjacency matrix of an <code>AbstractEcologicalNetwork</code> object.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L151-L155' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L138-L142' class='documenter-source'>source</a><br></p>
 <p><a id='Species-richness-1'></a></p>
 <h3 id="species-richness">Species richness</h3>
-<p><a id='EcologicalNetwork.richness' href='#EcologicalNetwork.richness'>#</a>
-<strong><code>EcologicalNetwork.richness</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>richness(N::AbstractEcologicalNetwork)
-</code></pre>
-
-<p>Returns the number of species in a network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L320-L324' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetworks.richness' href='#EcologicalNetworks.richness'>#</a>
+<strong><code>EcologicalNetworks.richness</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>richness(N::AbstractEcologicalNetwork, i::Int64)
 </code></pre>
 
 <p>Returns the number of species on either side of the network. The value of <code>i</code> can be <code>1</code> (top-level species) or <code>2</code> (bottom-level species), as in the <code>species</code> function.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L330-L336' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L14-L20' class='documenter-source'>source</a><br></p>
 <p><a id='Changing-network-shape-1'></a></p>
 <h3 id="changing-network-shape">Changing network shape</h3>
-<p><a id='Base.transpose' href='#Base.transpose'>#</a>
-<strong><code>Base.transpose</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>transpose(N::AbstractBipartiteNetwork)
+<p><a id='Base.permutedims' href='#Base.permutedims'>#</a>
+<strong><code>Base.permutedims</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>permutedims(N::AbstractBipartiteNetwork)
 </code></pre>
 
-<p>Returns a transposed copy of the network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L397-L401' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.nodiagonal' href='#EcologicalNetwork.nodiagonal'>#</a>
-<strong><code>EcologicalNetwork.nodiagonal</code></strong> &mdash; <em>Function</em>.</p>
+<p>Tranposes the network and returns a copy</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L317-L321' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetworks.nodiagonal' href='#EcologicalNetworks.nodiagonal'>#</a>
+<strong><code>EcologicalNetworks.nodiagonal</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>nodiagonal(N::AbstractUnipartiteNetwork)
 </code></pre>
 
 <p>Returns a copy of the network with its diagonal set to zero.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L118-L122' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L105-L109' class='documenter-source'>source</a><br></p>
 <pre><code>nodiagonal(N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Returns a <em>copy</em> of the network (because the diagonal of a bipartite network is never a meaningful notion). This function is clearly useless, but allows to write general code for all networks types when a step requires removing the diagonal.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L130-L137' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetwork.nodiagonal!' href='#EcologicalNetwork.nodiagonal!'>#</a>
-<strong><code>EcologicalNetwork.nodiagonal!</code></strong> &mdash; <em>Function</em>.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L117-L124' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetworks.nodiagonal!' href='#EcologicalNetworks.nodiagonal!'>#</a>
+<strong><code>EcologicalNetworks.nodiagonal!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>nodiagonal!(N::AbstractUnipartiteNetwork)
 </code></pre>
 
 <p>Modifies the network so that its diagonal is set to the appropriate zero.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L107-L111' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L94-L98' class='documenter-source'>source</a><br></p>
 <pre><code>nodiagonal!(N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Does nothing.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L142-L146' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L129-L133' class='documenter-source'>source</a><br></p>
 <p><a id='Invert-interactions-1'></a></p>
 <h3 id="invert-interactions">Invert interactions</h3>
 <p><a id='Base.:!' href='#Base.:!'>#</a>
@@ -880,7 +325,7 @@
 </code></pre>
 
 <p>Returns the inverse of a binary network – interactions that were <code>false</code> become <code>true</code>, and conversely.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L386-L391' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L306-L311' class='documenter-source'>source</a><br></p>
 <p><a id='Modify-interactions-1'></a></p>
 <h3 id="modify-interactions">Modify interactions</h3>
 <p><a id='Base.setindex!' href='#Base.setindex!'>#</a>
@@ -889,94 +334,89 @@
 </code></pre>
 
 <p>Changes the value of the interaction at the specificied position, where <code>i</code> and <code>j</code> are species <em>names</em>. Note that this operation <strong>changes the network</strong>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L291-L296' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L278-L283' class='documenter-source'>source</a><br></p>
 <pre><code>setindex!(N::T, A::K, i::E, j::E) where {T &lt;: AbstractEcologicalNetwork, K &lt;: first(eltype(N)), E &lt;: Int}
 </code></pre>
 
 <p>Changes the value of the interaction at the specificied position, where <code>i</code> and <code>j</code> are species <em>positions</em>. Note that this operation <strong>changes the network</strong>.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetwork.jl/blob/2d7198a9c79fa415c237a8112238226e622f6474/src/types/utilities.jl#L306-L311' class='documenter-source'>source</a><br></p>
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/utilities.jl#L293-L298' class='documenter-source'>source</a><br></p></div>
         </div>
-      </main>
-      
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../conversions/" title="Type conversions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Type conversions
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../properties/links/" title="Links" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Links
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
-    </div>
-  </div>
-</footer>
-      
-    </div>
-    
-      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
-      
-      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
-      
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-      
         <script src="../../assets/mathjaxhelper.js"></script>
-      
-    
-    
-      
-    
-  </body>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
 </html>

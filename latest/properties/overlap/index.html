@@ -8,7 +8,7 @@
         <meta name="author" content="Timothée Poisot">
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Modularity - EcologicalNetworks.jl</title>
+        <title>Overlap and complementarity - EcologicalNetworks.jl</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -77,8 +77,8 @@
     <a href="../links/">Links</a>
 </li>
                             
-<li class="active">
-    <a href="./">Modularity</a>
+<li >
+    <a href="../modularity/">Modularity</a>
 </li>
                             
 <li >
@@ -93,8 +93,8 @@
     <a href="../paths/">Centrality and paths</a>
 </li>
                             
-<li >
-    <a href="../overlap/">Overlap and complementarity</a>
+<li class="active">
+    <a href="./">Overlap and complementarity</a>
 </li>
                             
 <li >
@@ -115,17 +115,17 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../links/">
+                        <a rel="next" href="../paths/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../nestedness/">
+                        <a rel="prev" href="../randomization/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/properties/modularity.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/properties/overlap.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -135,77 +135,41 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#modularity">Modularity</a></li>
-            <li><a href="#measures">Measures</a></li>
-            <li><a href="#starters">Starters</a></li>
-            <li><a href="#optimizers">Optimizers</a></li>
+        <li class="main active"><a href="#measures-of-overlap">Measures of overlap</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><a id='Modularity-1'></a></p>
-<h1 id="modularity">Modularity</h1>
-<p>The analysis of network modularity is done in three steps:</p>
-<ol>
-<li>generate a starting point, using one of the starter functions</li>
-<li>optimize modularity</li>
-<li>analyse the output</li>
-</ol>
-<p>All starter functions take a network as input, and return a tuple of this network and a dictionary where every species maps onto its module. This forms the input of all other modularity related functions.</p>
-<p><a id='Measures-1'></a></p>
-<h2 id="measures">Measures</h2>
-<pre><code>Q
-Qr
+<p><a id='Measures-of-overlap-1'></a></p>
+<h1 id="measures-of-overlap">Measures of overlap</h1>
+<p><a id='EcologicalNetworks.overlap' href='#EcologicalNetworks.overlap'>#</a>
+<strong><code>EcologicalNetworks.overlap</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>overlap(N::T; dims=dims::Union{Nothing,Integer}=nothing) where {T &lt;: BipartiteNetwork}
 </code></pre>
 
-<p><a id='Starters-1'></a></p>
-<h2 id="starters">Starters</h2>
-<p><a id='EcologicalNetworks.n_random_modules' href='#EcologicalNetworks.n_random_modules'>#</a>
-<strong><code>EcologicalNetworks.n_random_modules</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>n_random_modules(n::Int64)
+<p>Returns the overlap graph for a bipartite network. The <code>dims</code> keyword argument can be <code>1</code> (default; overlap between top-level species) or <code>2</code> (overlap between bottom-level species). See the documentation for <code>?overlap</code> for the output format.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/overlap.jl#L1-L8' class='documenter-source'>source</a><br></p>
+<pre><code>overlap(N::T; dims::Union{Nothing,Integer}=nothing) where {T &lt;: UnipartiteNetwork}
 </code></pre>
 
-<p>This returns <em>a function</em> which, when applied to a network, will randomly assign every species to one of <code>n</code> modules. The correct way to apply this function to a network <code>N</code> is, therefore <code>n_random_modules(4)(N)</code> (with four modules).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/modularity/starters.jl#L1-L7' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetworks.each_species_its_module' href='#EcologicalNetworks.each_species_its_module'>#</a>
-<strong><code>EcologicalNetworks.each_species_its_module</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>each_species_its_module(N::T) where {T&lt;:AbstractEcologicalNetwork}
+<p>Returns the overlap graph for a unipartite network. The <code>dims</code> keyword argument can be <code>1</code> (overlap based on preys) or <code>2</code> (overlap based on predators), or <code>nothing</code> (default; overlap based on both predators and preys). The overlap is returned as a vector of named tuples, with elements <code>pair</code> (a tuple of species names), and <code>overlap</code> (the number of shared interactors). The ordering within the pair of species is unimportant, since overlap graphs are symetrical.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/overlap.jl#L13-L22' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetworks.AJS' href='#EcologicalNetworks.AJS'>#</a>
+<strong><code>EcologicalNetworks.AJS</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>AJS(N::T; dims::Union{Nothing,Integer}=nothing) where {T &lt;: UnipartiteNetwork}
 </code></pre>
 
-<p>Returns a dictionary in which each species is its own module. This is used as a starting point for <code>lp</code> and <code>salp</code> internally. This is often a very poor starting point for <code>brim</code>, and should probably not be used on its own.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/modularity/starters.jl#L14-L20' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetworks.lp' href='#EcologicalNetworks.lp'>#</a>
-<strong><code>EcologicalNetworks.lp</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>lp(N::T) where {T&lt;:AbstractEcologicalNetwork}
+<p>Additive Jaccard Similarity for pairs of species in the network. AJS varies between 0 (no common species) to 1 (same profiles). This function can be used to measure AJS based on only successors or predecessors, using the <code>dims</code> argument.</p>
+<p>Note that this function uses all <em>direct</em> preys and predators to measure the similarity (and so does not go beyond the immediate neighbors).</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/overlap.jl#L60-L70' class='documenter-source'>source</a><br></p>
+<p><a id='EcologicalNetworks.EAJS' href='#EcologicalNetworks.EAJS'>#</a>
+<strong><code>EcologicalNetworks.EAJS</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>EAJS(N::T; dims::Union{Nothing,Integer}=nothing) where {T &lt;: UnipartiteNetwork}
 </code></pre>
 
-<p>Uses label propagation to generate a first approximation of the modular structure of a network. This is usually followed by the BRIM (<code>brim</code>) method. This method supposedly performs better for large graphs, but we rarely observed any differences between it and variations of BRIM alone on smaller graphs.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/modularity/labelpropagation.jl#L1-L8' class='documenter-source'>source</a><br></p>
-<p><a id='Optimizers-1'></a></p>
-<h2 id="optimizers">Optimizers</h2>
-<p><a id='EcologicalNetworks.brim' href='#EcologicalNetworks.brim'>#</a>
-<strong><code>EcologicalNetworks.brim</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>brim(N::NT, L::Dict{E,Int64}) where {NT&lt;:AbstractEcologicalNetwork,E&lt;:AllowedSpeciesTypes}
-</code></pre>
-
-<p>Uses BRIM to optimize the modularity of an ecological network. The <code>L</code> argument is a dictionary mapping every species in the network to its module. This function returns a tuple of the network and its module assignment.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/modularity/brim.jl#L1-L7' class='documenter-source'>source</a><br></p>
-<p><a id='EcologicalNetworks.salp' href='#EcologicalNetworks.salp'>#</a>
-<strong><code>EcologicalNetworks.salp</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>salp(N::T; θ::Float64=1.0, steps::Int64=10_000, λ::Float64=0.999, progress::Bool=false) where {T &lt;: BipartiteNetwork}
-</code></pre>
-
-<p>Label-propagation using simulated annealing. This function uses simulated annealing to propagate labels from neighboring nodes. It accepts a network as input. The schedule of the simulated annealing is linear: at step k+1, the temperature is θλᵏ. The initial temperature has been picked so that after 100 timesteps, using the default λ, a move decreasing modularity by 0.05 (20% of the theoretical maximum) is picked with a probability of 0.1.</p>
-<p>Optional arguments regulating the behavior of the simulated annealing routine are:</p>
-<ul>
-<li><code>λ=0.999</code>, the rate of temperature decay</li>
-<li><code>θ=0.002</code>, the initial temperature</li>
-<li><code>steps=10_000</code>, the number of annealing steps to perform</li>
-<li><code>progress=false</code>, whether to display an info message every 100 timesteps</li>
-</ul>
-<p>The θ parameter can be picked using the following method: if we want to allow a maximal loss of modularity of δ, after timestep k, with a decay parameter λ, with a probability P, then θ = -δ/[λᵏ×ln(P)]⁻¹. By beibg more or less restrictive on these parameters, the user can pick a value of θ for every problem.</p>
-<p>This function can work as a first step (like <code>lp</code>), but in explorations during the development of the package, we found that <code>brim</code> was rarely (if ever) able to optmize the output further. It can therefore be used on its own.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/modularity/labelpropagation.jl#L59-L86' class='documenter-source'>source</a><br></p></div>
+<p>Extended Additive Jaccard Similarity for pairs of species in the network. AJS varies between 0 (no common species) to 1 (same profiles). This function can be used to measure AJS based on only successors or predecessors, using the <code>dims</code> argument.</p>
+<p>Note that this function counts all interactions up to a distance of 50 to define the neighbourhood of a species. This should be more than sufficient for most ecological networks.</p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/overlap.jl#L112-L123' class='documenter-source'>source</a><br></p></div>
         </div>
 
         <footer class="col-md-12">
