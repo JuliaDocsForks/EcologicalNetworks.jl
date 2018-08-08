@@ -1,146 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta name="author" content="Timothée Poisot">
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Type conversions - EcologicalNetworks.jl</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../assets/Documenter.css" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Timothée Poisot">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Type conversions - EcologicalNetworks.jl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../assets/Documenter.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Type conversions";
+    var mkdocs_page_input_path = "interface/conversions.md";
+    var mkdocs_page_url = "/interface/conversions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
 
-    <body>
+<body class="wy-body-for-nav" role="document">
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+  <div class="wy-grid-for-nav">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">EcologicalNetworks.jl</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li >
-                        <a href="../../toc/">Table of contents</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Interface <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../types/">Types</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Type conversions</a>
-</li>
-                            
-<li >
-    <a href="../highlevel/">Core functions</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Network measures <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../properties/links/">Links</a>
-</li>
-                            
-<li >
-    <a href="../../properties/modularity/">Modularity</a>
-</li>
-                            
-<li >
-    <a href="../../properties/nestedness/">Nestedness</a>
-</li>
-                            
-<li >
-    <a href="../../properties/motifs/">Motifs</a>
-</li>
-                            
-<li >
-    <a href="../../properties/paths/">Centrality and paths</a>
-</li>
-                            
-<li >
-    <a href="../../properties/overlap/">Overlap and complementarity</a>
-</li>
-                            
-<li >
-    <a href="../../properties/randomization/">Randomization</a>
-</li>
-                            
-<li >
-    <a href="../../properties/betadiversity/">β-diversity</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../types/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../highlevel/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/interface/conversions.md"><i class="fa fa-github"></i> Edit on GitHub</a>
-                    </li>
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> EcologicalNetworks.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#conversions">Conversions</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../toc/">Table of contents</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Interface</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../types/">Types</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Type conversions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#conversions">Conversions</a></li>
+    
+
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+                </li>
+                <li class="">
+                    
+    <a class="" href="../highlevel/">Core functions</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Network measures</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../properties/links/">Links</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../properties/modularity/">Modularity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../properties/nestedness/">Nestedness</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../properties/motifs/">Motifs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../properties/paths/">Centrality and paths</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../properties/overlap/">Overlap and complementarity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../properties/randomization/">Randomization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../properties/betadiversity/">β-diversity</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
 
-<p><a id='Conversions-1'></a></p>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">EcologicalNetworks.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Interface &raquo;</li>
+        
+      
+    
+    <li>Type conversions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/interface/conversions.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Conversions-1'></a></p>
 <h1 id="conversions">Conversions</h1>
 <p>Conversions between types are used to perform two usual operations: make a bipartite network unipartite, and remove quantitative information. There are two high-level functions which work by using the union types, and a series of type-to-type functions (the later should be avoided, and exists only to make the high-level functions work).</p>
 <p><a id='Base.convert' href='#Base.convert'>#</a>
@@ -149,116 +170,90 @@
 </code></pre>
 
 <p>Projects a deterministic bipartite network in its unipartite representation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/conversions.jl#L3-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/types/conversions.jl#L3-L7' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{UnipartiteProbabilisticNetwork}, N::T) where {T &lt;: BipartiteProbabilisticNetwork}
 </code></pre>
 
 <p>Projects a probabilistic bipartite network in its unipartite representation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/conversions.jl#L16-L20' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/types/conversions.jl#L16-L20' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{UnipartiteQuantitativeNetwork}, N::T) where {T &lt;: BipartiteQuantitativeNetwork}
 </code></pre>
 
 <p>Projects a quantitative bipartite network in its unipartite representation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/conversions.jl#L29-L33' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/types/conversions.jl#L29-L33' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{UnipartiteNetwork}, N::T) where {T &lt;: UnipartiteQuantitativeNetwork}
 </code></pre>
 
 <p>Convert a unipartite quantitative network to a unipartite binary network. This amounts to <em>removing</em> the quantitative information.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/conversions.jl#L42-L47' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/types/conversions.jl#L42-L47' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{BipartiteNetwork}, N::T) where {T &lt;: BipartiteQuantitativeNetwork}
 </code></pre>
 
 <p>Convert a bipartite quantitative network to a bipartite binary network. This amounts to <em>removing</em> the quantitative information.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/conversions.jl#L54-L59' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/types/conversions.jl#L54-L59' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{AbstractUnipartiteNetwork}, N::AbstractBipartiteNetwork)
 </code></pre>
 
 <p>Projects any bipartite network in its unipartite representation. This function will call the correct type-to-type <code>convert</code> function depending on the type of the input network.</p>
 <p>The type to be converted to <em>must</em> be <code>AbstractUnipartiteNetwork</code> – for example, converting a bipartite probabilistic network to a probabilistic unipartite network is not a meaningful operation.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/conversions.jl#L67-L77' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/types/conversions.jl#L67-L77' class='documenter-source'>source</a><br></p>
 <pre><code>convert(::Type{BinaryNetwork}, N::QuantitativeNetwork)
 </code></pre>
 
 <p>Projects any bipartite network in its unipartite representation. This function will call the correct type-to-type <code>convert</code> function depending on the type of the input network.</p>
 <p>This function does <em>not</em> work for probabilistic networks. The operation of generating a deterministic network from a probabilistic one is different from a simple conversion: it can be done either through random draws, or by selecting only interactions with a probability greater than 0 (<code>N&gt;0.0</code> will do this).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/types/conversions.jl#L90-L101' class='documenter-source'>source</a><br></p></div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-        <script src="../../assets/mathjaxhelper.js"></script>
-        <script src="../../search/require.js"></script>
-        <script src="../../search/search.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/types/conversions.jl#L90-L101' class='documenter-source'>source</a><br></p>
+              
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../highlevel/" class="btn btn-neutral float-right" title="Core functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../types/" class="btn btn-neutral" title="Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../types/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../highlevel/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
 </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      <script src="../../assets/mathjaxhelper.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
-
-    </body>
+</body>
 </html>

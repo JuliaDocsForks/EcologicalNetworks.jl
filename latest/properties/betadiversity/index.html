@@ -1,149 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta name="author" content="Timothée Poisot">
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>β-diversity - EcologicalNetworks.jl</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../assets/Documenter.css" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Timothée Poisot">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>β-diversity - EcologicalNetworks.jl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../assets/Documenter.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u03b2-diversity";
+    var mkdocs_page_input_path = "properties/betadiversity.md";
+    var mkdocs_page_url = "/properties/betadiversity/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
 
-    <body>
+<body class="wy-body-for-nav" role="document">
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+  <div class="wy-grid-for-nav">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">EcologicalNetworks.jl</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li >
-                        <a href="../../toc/">Table of contents</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Interface <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../interface/types/">Types</a>
-</li>
-                            
-<li >
-    <a href="../../interface/conversions/">Type conversions</a>
-</li>
-                            
-<li >
-    <a href="../../interface/highlevel/">Core functions</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Network measures <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../links/">Links</a>
-</li>
-                            
-<li >
-    <a href="../modularity/">Modularity</a>
-</li>
-                            
-<li >
-    <a href="../nestedness/">Nestedness</a>
-</li>
-                            
-<li >
-    <a href="../motifs/">Motifs</a>
-</li>
-                            
-<li >
-    <a href="../paths/">Centrality and paths</a>
-</li>
-                            
-<li >
-    <a href="../overlap/">Overlap and complementarity</a>
-</li>
-                            
-<li >
-    <a href="../randomization/">Randomization</a>
-</li>
-                            
-<li class="active">
-    <a href="./">β-diversity</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../randomization/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li class="disabled">
-                        <a rel="prev" >
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/properties/betadiversity.md"><i class="fa fa-github"></i> Edit on GitHub</a>
-                    </li>
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> EcologicalNetworks.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#network-diversity">Network β-diversity</a></li>
-            <li><a href="#-diversity-components">β-diversity components</a></li>
-            <li><a href="#-diversity-measures">β-diversity measures</a></li>
-            <li><a href="#basic-operations-on-networks">Basic operations on networks</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../toc/">Table of contents</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Interface</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../interface/types/">Types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interface/conversions/">Type conversions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interface/highlevel/">Core functions</a>
+                </li>
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Network measures</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../links/">Links</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modularity/">Modularity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../nestedness/">Nestedness</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../motifs/">Motifs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../paths/">Centrality and paths</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../overlap/">Overlap and complementarity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../randomization/">Randomization</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">β-diversity</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#network-diversity">Network β-diversity</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#-diversity-components">β-diversity components</a></li>
+        
+            <li><a class="toctree-l4" href="#-diversity-measures">β-diversity measures</a></li>
+        
+            <li><a class="toctree-l4" href="#basic-operations-on-networks">Basic operations on networks</a></li>
+        
+        </ul>
+    
 
-<p><a id='Network-β-diversity-1'></a></p>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">EcologicalNetworks.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Network measures &raquo;</li>
+        
+      
+    
+    <li>β-diversity</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/properties/betadiversity.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Network-β-diversity-1'></a></p>
 <h1 id="network-diversity">Network β-diversity</h1>
 <p>Measures of β-diversity work by first calculating the unique/shared items (using the <code>βs</code>, <code>βos</code>, and <code>βwn</code> functions), then passing on these arguments to one of the <code>KGLXX</code> functions to return a (dis)similarity score. The <code>KGL</code> functions are named for Koleff, Gaston, and Lennon – the number of each function matches the number in Table 1.</p>
 <p><a id='β-diversity-components-1'></a></p>
@@ -155,17 +183,17 @@
 </code></pre>
 
 <p>Components of β-diversity as measured on species.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/partitions.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/partitions.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetworks.βos' href='#EcologicalNetworks.βos'>#</a>
 <strong><code>EcologicalNetworks.βos</code></strong> &mdash; <em>Function</em>.</p>
 <p>Overlapping species (bipartite)</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/partitions.jl#L14-L16' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/partitions.jl#L14-L16' class='documenter-source'>source</a><br></p>
 <p>Overlapping species (unipartite)</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/partitions.jl#L28-L30' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/partitions.jl#L28-L30' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetworks.βwn' href='#EcologicalNetworks.βwn'>#</a>
 <strong><code>EcologicalNetworks.βwn</code></strong> &mdash; <em>Function</em>.</p>
 <p>Whole network</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/partitions.jl#L42-L44' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/partitions.jl#L42-L44' class='documenter-source'>source</a><br></p>
 <p><a id='β-diversity-measures-1'></a></p>
 <h2 id="-diversity-measures">β-diversity measures</h2>
 <p><a id='EcologicalNetworks.KGL01' href='#EcologicalNetworks.KGL01'>#</a>
@@ -174,7 +202,7 @@
 </code></pre>
 
 <p>Whittaker</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/measures.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/measures.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='Basic-operations-on-networks-1'></a></p>
 <h2 id="basic-operations-on-networks">Basic operations on networks</h2>
 <p>Internally, the functions for β-diversity rely on the usual operations on sets. The act of combining two networks, for example, is a <code>union</code> operation.</p>
@@ -184,113 +212,83 @@
 </code></pre>
 
 <p>Difference between two bipartite networks. This operation is <em>sensitive</em> to the order of arguments, as the resulting network will have the species present in the first network (and their interactions) only.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/operations.jl#L103-L109' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/operations.jl#L103-L109' class='documenter-source'>source</a><br></p>
 <pre><code>setdiff(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
 </code></pre>
 
 <p>Difference between two unipartite networks. This operation is <em>sensitive</em> to the order of arguments, as the resulting network will have the species present in the first network (and their interactions) only.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/operations.jl#L116-L122' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/operations.jl#L116-L122' class='documenter-source'>source</a><br></p>
 <p><a id='Base.union' href='#Base.union'>#</a>
 <strong><code>Base.union</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>union(X::T, Y::T) where {T&lt;:BipartiteNetwork}
 </code></pre>
 
 <p>Union of two bipartite networks – interactions <em>and</em> species which are present in either networks are also present in the final network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/operations.jl#L5-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/operations.jl#L5-L10' class='documenter-source'>source</a><br></p>
 <pre><code>union(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
 </code></pre>
 
 <p>Union of two unipartite networks – interactions <em>and</em> species which are present in either networks are also present in the final network.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/operations.jl#L55-L60' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/operations.jl#L55-L60' class='documenter-source'>source</a><br></p>
 <p><a id='Base.intersect' href='#Base.intersect'>#</a>
 <strong><code>Base.intersect</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>intersect(X::T, Y::T) where {T&lt;:BipartiteNetwork}
 </code></pre>
 
 <p>Intersect between two bipartite networks. The resulting network has the <em>species and interactions</em> common to both networks. This can result in species being disconnected, if they are found in both networks but with no operations in common.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/operations.jl#L33-L40' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/operations.jl#L33-L40' class='documenter-source'>source</a><br></p>
 <pre><code>intersect(X::T, Y::T) where {T&lt;:UnipartiteNetwork}
 </code></pre>
 
 <p>Intersect between two unipartite networks. The resulting network has the <em>species and interactions</em> common to both networks. This can result in species being disconnected, if they are found in both networks but with no operations in common.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/betadiversity/operations.jl#L82-L89' class='documenter-source'>source</a><br></p></div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-        <script src="../../assets/mathjaxhelper.js"></script>
-        <script src="../../search/require.js"></script>
-        <script src="../../search/search.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/betadiversity/operations.jl#L82-L89' class='documenter-source'>source</a><br></p>
+              
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../randomization/" class="btn btn-neutral" title="Randomization"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../randomization/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
 </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      <script src="../../assets/mathjaxhelper.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
-
-    </body>
+</body>
 </html>

@@ -1,148 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta name="author" content="Timothée Poisot">
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Centrality and paths - EcologicalNetworks.jl</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <link href="../../assets/Documenter.css" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Timothée Poisot">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Centrality and paths - EcologicalNetworks.jl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../assets/Documenter.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Centrality and paths";
+    var mkdocs_page_input_path = "properties/paths.md";
+    var mkdocs_page_url = "/properties/paths/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
 
-    <body>
+<body class="wy-body-for-nav" role="document">
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+  <div class="wy-grid-for-nav">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">EcologicalNetworks.jl</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li >
-                        <a href="../../toc/">Table of contents</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Interface <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../interface/types/">Types</a>
-</li>
-                            
-<li >
-    <a href="../../interface/conversions/">Type conversions</a>
-</li>
-                            
-<li >
-    <a href="../../interface/highlevel/">Core functions</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Network measures <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../links/">Links</a>
-</li>
-                            
-<li >
-    <a href="../modularity/">Modularity</a>
-</li>
-                            
-<li >
-    <a href="../nestedness/">Nestedness</a>
-</li>
-                            
-<li >
-    <a href="../motifs/">Motifs</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Centrality and paths</a>
-</li>
-                            
-<li >
-    <a href="../overlap/">Overlap and complementarity</a>
-</li>
-                            
-<li >
-    <a href="../randomization/">Randomization</a>
-</li>
-                            
-<li >
-    <a href="../betadiversity/">β-diversity</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../motifs/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../overlap/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/properties/paths.md"><i class="fa fa-github"></i> Edit on GitHub</a>
-                    </li>
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> EcologicalNetworks.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#paths-and-centrality">Paths and centrality</a></li>
-            <li><a href="#number-of-paths-and-shortest-path">Number of paths and shortest path</a></li>
-            <li><a href="#centrality-measures">Centrality measures</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../toc/">Table of contents</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Interface</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../interface/types/">Types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interface/conversions/">Type conversions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interface/highlevel/">Core functions</a>
+                </li>
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Network measures</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../links/">Links</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modularity/">Modularity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../nestedness/">Nestedness</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../motifs/">Motifs</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Centrality and paths</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#paths-and-centrality">Paths and centrality</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#number-of-paths-and-shortest-path">Number of paths and shortest path</a></li>
+        
+            <li><a class="toctree-l4" href="#centrality-measures">Centrality measures</a></li>
+        
+        </ul>
+    
 
-<p><a id='Paths-and-centrality-1'></a></p>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../overlap/">Overlap and complementarity</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../randomization/">Randomization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../betadiversity/">β-diversity</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">EcologicalNetworks.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Network measures &raquo;</li>
+        
+      
+    
+    <li>Centrality and paths</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/edit/master/docs/properties/paths.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Paths-and-centrality-1'></a></p>
 <h1 id="paths-and-centrality">Paths and centrality</h1>
 <p><a id='Number-of-paths-and-shortest-path-1'></a></p>
 <h2 id="number-of-paths-and-shortest-path">Number of paths and shortest path</h2>
@@ -155,7 +182,7 @@
 <ul>
 <li><code>n</code> (def. 2), the path length</li>
 </ul>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/paths.jl#L1-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/paths.jl#L1-L7' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetworks.shortest_path' href='#EcologicalNetworks.shortest_path'>#</a>
 <strong><code>EcologicalNetworks.shortest_path</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>shortest_path(N::UnipartiteNetwork; nmax::Int64=50)
@@ -163,25 +190,25 @@
 
 <p>This is not an optimal algorithm <em>at all</em>, but it will do given that most ecological networks are relatively small. The optional <code>nmax</code> argument is the longest shortest path length you will look for.</p>
 <p>In ecological networks, the longest shortest path tends not to be very long, so any value above 10 is probably overdoing it. Note that the default value is 50, which is above 10.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/paths.jl#L17-L27' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/paths.jl#L17-L27' class='documenter-source'>source</a><br></p>
 <pre><code>shortest_path(N::UnipartiteQuantiNetwork; nmax::Int64=50)
 </code></pre>
 
 <p>This function will remove quantitative information, then measure the shortest path length.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/paths.jl#L39-L44' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/paths.jl#L39-L44' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetworks.bellman_ford' href='#EcologicalNetworks.bellman_ford'>#</a>
 <strong><code>EcologicalNetworks.bellman_ford</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>bellman_ford(N::T, source::K) where {T &lt;: DeterministicNetwork, K &lt;: AllowedSpeciesTypes}
 </code></pre>
 
 <p>Bellman-Ford algorithm to return the shortest / easiest paths from a source species. Refer to the <code>bellman_ford</code> global documentation for the output format.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/paths.jl#L49-L54' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/paths.jl#L49-L54' class='documenter-source'>source</a><br></p>
 <pre><code>bellman_ford(N::T) where {T &lt;: DeterministicNetwork}
 </code></pre>
 
 <p>Bellman-ford algorithm to return the shortest / easiest paths between all pairs of species in the networks, as long as paths exists. This function will return a tuple, with fields <code>from</code>, <code>to</code> and <code>weight</code>. The number of elements in the tuple is the number of paths. This function works with quantitative and binary networks, and assumes that no interactions are negative.</p>
 <p>Currently, the Bellman-Ford algorithm is <em>slower</em> than the <code>shortest_path</code> function, but the arguments are returned in a more usable way. Note that the speed penalty is only valid when measuring the shortest paths in the entire network (and will be fixed relatively soon), and does not apply as much for the shortest paths from a single source node.</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/paths.jl#L85-L99' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/paths.jl#L85-L99' class='documenter-source'>source</a><br></p>
 <p><a id='Centrality-measures-1'></a></p>
 <h2 id="centrality-measures">Centrality measures</h2>
 <p><a id='EcologicalNetworks.centrality_degree' href='#EcologicalNetworks.centrality_degree'>#</a>
@@ -190,7 +217,7 @@
 </code></pre>
 
 <p>Degree centrality, corrected by the maximum degree (the most central species has a degree of 1).</p>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/centrality.jl#L42-L47' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/centrality.jl#L42-L47' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetworks.centrality_closeness' href='#EcologicalNetworks.centrality_closeness'>#</a>
 <strong><code>EcologicalNetworks.centrality_closeness</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>centrality_closeness(N::UnipartiteNetwork; nmax::Int64=100)
@@ -200,7 +227,7 @@
 <blockquote>
 <p>Bavelas, A., 1950. Communication Patterns in Task‐Oriented Groups. The Journal of the Acoustical Society of America 22, 725–730. doi:10.1121/1.1906679</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/centrality.jl#L20-L28' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/centrality.jl#L20-L28' class='documenter-source'>source</a><br></p>
 <p><a id='EcologicalNetworks.centrality_katz' href='#EcologicalNetworks.centrality_katz'>#</a>
 <strong><code>EcologicalNetworks.centrality_katz</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>centrality_katz(N::Unipartite; a::Float64=0.1, k::Int64=5)
@@ -210,84 +237,58 @@
 <blockquote>
 <p>Katz, L., 1953. A new status index derived from sociometric analysis. Psychometrika 18, 39–43. doi:10.1007/bf02289026</p>
 </blockquote>
-<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/d9f7dca9e34215093438990b9ebdf0ed0d082e7e/src/community/centrality.jl#L1-L11' class='documenter-source'>source</a><br></p></div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-        <script src="../../assets/mathjaxhelper.js"></script>
-        <script src="../../search/require.js"></script>
-        <script src="../../search/search.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+<p><a target='_blank' href='https://github.com/PoisotLab/EcologicalNetworks.jl/blob/5496df53d4da45e469412266721b65fb1bfe58e7/src/community/centrality.jl#L1-L11' class='documenter-source'>source</a><br></p>
+              
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../overlap/" class="btn btn-neutral float-right" title="Overlap and complementarity">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../motifs/" class="btn btn-neutral" title="Motifs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/PoisotLab/EcologicalNetworks.jl/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../motifs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../overlap/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
 </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      <script src="../../assets/mathjaxhelper.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
-
-    </body>
+</body>
 </html>

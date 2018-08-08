@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/toc/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/interface/types/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/interface/conversions/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/interface/highlevel/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/links/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/modularity/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/nestedness/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/motifs/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/paths/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/overlap/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/randomization/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/properties/betadiversity/</loc>
-     <lastmod>2018-08-07</lastmod>
+     <lastmod>2018-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
